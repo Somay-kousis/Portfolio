@@ -7,6 +7,8 @@ import Preloader from "@/components/layout/Preloader";
 import GlobalScene from "@/components/3d/GlobalScene";
 import Navigation from "@/components/layout/Navigation";
 
+import WarningSuppressor from "@/components/layout/WarningSuppressor";
+
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -28,14 +30,17 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="relative min-h-full flex flex-col bg-background text-foreground">
+        <WarningSuppressor />
         <Preloader />
         <Navigation />
         <div className="cinematic-noise" />
         <CustomCursor />
         <GlobalScene />
         <SmoothScroll>
-          {children}
+          <div className="relative z-10">
+            {children}
+          </div>
         </SmoothScroll>
       </body>
     </html>

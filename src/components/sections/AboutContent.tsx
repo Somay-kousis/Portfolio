@@ -25,7 +25,7 @@ export default function AboutContent() {
           Identity / Philosophy
         </motion.h1>
 
-        <section ref={containerRef} className="max-w-5xl flex flex-wrap gap-x-4 gap-y-2 mb-48 mix-blend-difference">
+        <section ref={containerRef} className="relative max-w-5xl flex flex-wrap gap-x-4 gap-y-2 mb-48 mix-blend-difference">
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + (1 / words.length);

@@ -87,7 +87,7 @@ function CameraRig() {
 
 export default function GlobalScene() {
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none bg-background">
+    <div className="fixed inset-0 z-0 pointer-events-none bg-background">
       <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
         <fog attach="fog" args={["#020202", 3, 15]} />
         <ambientLight intensity={0.1} />
