@@ -7,7 +7,7 @@ import Link from "next/link";
 const projects = [
   { title: "MUTINY", meta: "Design / Engineering" },
   { title: "STEELECAREER", meta: "Product / ML" },
-  { title: "ZUUUSH", meta: "Engineering" },
+  { title: "GHOSTING", meta: "Engineering" },
 ];
 
 export default function MomentWork() {

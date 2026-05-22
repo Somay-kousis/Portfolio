@@ -41,17 +41,17 @@ const projectsData: Record<string, ProjectDetail> = {
       "/images/projects/steelecareer-detail-2.png"
     ]
   },
-  zuuush: {
-    title: "ZUUUSH",
-    role: "Full-Stack & Interaction Engineer",
+  ghosting: {
+    title: "GHOSTING",
+    role: "Machine Learning Engineer",
     year: "2026",
     philosophy: "Emotional resonance through digital form.",
-    description: "Zuuush is a digital mental health platform built around high-fidelity micro-interactions and empathetic styling. Focused on calming animations, intuitive navigation, and high performance, it aims to create an emotional safe haven online.",
-    tags: ["React Native", "TailwindCSS", "Node.js", "Interaction Design"],
-    heroImage: "/images/projects/zuuush-hero.png",
+description: "An investigative machine learning case study exploring customer churn before it happens. Built around XGBoost, behavioral analysis, and narrative-driven data visualization to uncover the subtle signals users leave behind before they quietly disappear.",
+tags: ["Python", "XGBoost", "Pandas", "Scikit-Learn"],
+    heroImage: "/images/projects/ghosting-hero.png",
     secondaryImages: [
-      "/images/projects/zuuush-detail-1.png",
-      "/images/projects/zuuush-detail-2.png"
+      "/images/projects/ghosting-detail-1.png",
+      "/images/projects/ghosting-detail-2.png"
     ]
   }
 };
@@ -87,7 +87,7 @@ function ImageSlot({ src, label, aspectRatio, isLight = false }: ImageSlotProps)
           src={src}
           alt={label}
           onError={() => setImageError(true)}
-          className="w-full h-full object-cover transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105"
+          className="w-full h-full object-contain transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105"
         />
       ) : null}
 
@@ -141,7 +141,7 @@ function ImageSlot({ src, label, aspectRatio, isLight = false }: ImageSlotProps)
 }
 
 export default function WorkDetailContent({ slug }: { slug: string }) {
-  const isLight = slug.toLowerCase() === "zuuush";
+  const isLight = false;
 
   const project = projectsData[slug.toLowerCase()] || {
     title: slug.toUpperCase(),
