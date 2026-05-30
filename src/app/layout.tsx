@@ -6,6 +6,7 @@ import CustomCursor from "@/components/layout/CustomCursor";
 import Preloader from "@/components/layout/Preloader";
 import GlobalScene from "@/components/3d/GlobalScene";
 import Navigation from "@/components/layout/Navigation";
+import FloatingBot from "@/components/layout/FloatingBot";
 
 import WarningSuppressor from "@/components/layout/WarningSuppressor";
 
@@ -37,6 +38,7 @@ export default function RootLayout({
         <div className="cinematic-noise" />
         <CustomCursor />
         <GlobalScene />
+        <FloatingBot />
         <SmoothScroll>
           <div className="relative z-10">
             {children}
