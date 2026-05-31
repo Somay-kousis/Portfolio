@@ -161,7 +161,7 @@ export default function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
             </div>
 
             {/* Chat Messages */}
-            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6 scrollbar-thin">
+            <div className="flex-1 min-h-0 overflow-y-auto px-6 py-6 space-y-6 chat-messages-container">
               {messages.map((msg) => (
                 <div
                   key={msg.id}

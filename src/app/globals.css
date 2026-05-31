@@ -55,3 +55,26 @@
   width: 0px;
   background: transparent;
 }
+
+.chat-messages-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.chat-messages-container::-webkit-scrollbar {
+  width: 4px !important;
+  background: transparent !important;
+}
+
+.chat-messages-container::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 2px !important;
+}
+
+.chat-messages-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
