@@ -13,11 +13,27 @@ you are currently viewing an archived system
 <br>
 
 ```text
-status      : active
-location    : somewhere between frontend and ai
-version     : unstable
-last update : constantly
+---SYSTEM STATUS---
+
+active
+
+---CURRENT OBSESSION---
+
+building whimsical things
+
+---DIRECTION---
+
+frontend × ai
+
+---STABILITY---
+
+questionable
+
+---LAST UPDATE---
+
+constantly
 ```
+
 
 </div>
 
