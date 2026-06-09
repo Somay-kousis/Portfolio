@@ -26,7 +26,7 @@ export default function MomentArrival() {
               AI/ML Engineer / Retrieval / Prediction / Product Systems
             </p>
             <h1 className="max-w-6xl text-[clamp(3.6rem,10vw,11rem)] font-bold uppercase leading-[0.82] tracking-tighter text-foreground">
-              Building ML systems recruiters can verify.
+              Building AI systems recruiters can verify.
             </h1>
           </div>
 
