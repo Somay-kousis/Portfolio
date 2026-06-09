@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/layout/SmoothScroll";
-import CustomCursor from "@/components/layout/CustomCursor";
-import Preloader from "@/components/layout/Preloader";
-import GlobalScene from "@/components/3d/GlobalScene";
 import Navigation from "@/components/layout/Navigation";
-import FloatingBot from "@/components/layout/FloatingBot";
-
-import WarningSuppressor from "@/components/layout/WarningSuppressor";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -17,8 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Somay Kousis | Builder",
-  description: "Digital identity of Somay Kousis, Machine Learning & Product-focused builder.",
+  title: "Somay Kousis | AI Engineer",
+  description:
+    "AI Engineer building agentic systems, memory architectures, and AI products. Focused on LangGraph, RAG, and production-grade AI systems.",
 };
 
 export default function RootLayout({
@@ -27,23 +21,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} antialiased`}
-    >
+    <html lang="en" className={`${inter.variable} antialiased bg-background`}>
       <body className="relative min-h-full flex flex-col bg-background text-foreground">
-        <WarningSuppressor />
-        <Preloader />
         <Navigation />
-        <div className="cinematic-noise" />
-        <CustomCursor />
-        <GlobalScene />
-        <FloatingBot />
-        <SmoothScroll>
-          <div className="relative z-10">
-            {children}
-          </div>
-        </SmoothScroll>
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   );

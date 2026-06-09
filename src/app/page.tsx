@@ -1,15 +1,21 @@
-import MomentArrival from "@/components/sections/MomentArrival";
-import MomentWork from "@/components/sections/MomentWork";
-import MomentSystems from "@/components/sections/MomentSystems";
-import MomentDeparture from "@/components/sections/MomentDeparture";
+import Hero from "@/components/sections/Hero";
+import Experience from "@/components/sections/Experience";
+import Projects from "@/components/sections/Projects";
+import Skills from "@/components/sections/Skills";
+import Achievements from "@/components/sections/Achievements";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-between w-full relative z-10">
-      <MomentArrival />
-      <MomentWork />
-      <MomentSystems />
-      <MomentDeparture />
+    <main className="w-full">
+      <Hero />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Achievements />
+      <Contact />
+      <Footer />
     </main>
   );
 }
