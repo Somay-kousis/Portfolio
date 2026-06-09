@@ -16,7 +16,7 @@ export default function Hero() {
           className="w-full flex flex-col"
         >
           <div className="flex flex-col gap-0 leading-[0.85] tracking-tighter w-full">
-            <h1 className="text-[clamp(4rem,15vw,16rem)] font-bold uppercase text-foreground mix-blend-difference">
+            <h1 className="text-[clamp(4rem,15vw,16rem)] font-bold uppercase text-foreground">
               Machine
             </h1>
             <h1 className="text-[clamp(4rem,15vw,16rem)] font-bold uppercase text-muted-foreground ml-auto md:ml-0 md:pl-[10vw]">

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import type { MotionValue } from "framer-motion";
 import { useRef } from "react";
 
 export default function About() {
@@ -50,7 +51,7 @@ export default function About() {
   );
 }
 
-function Word({ word, progress, range }: { word: string, progress: any, range: number[] }) {
+function Word({ word, progress, range }: { word: string, progress: MotionValue<number>, range: number[] }) {
   const opacity = useTransform(progress, range, [0.1, 1]);
   return (
     <motion.span 

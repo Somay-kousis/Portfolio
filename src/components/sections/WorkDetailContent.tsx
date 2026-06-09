@@ -1,289 +1,176 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { projects } from "@/lib/portfolio-data";
 
-interface ProjectDetail {
-  title: string;
-  role: string;
-  year: string;
-  philosophy: string;
-  description: string;
-  tags: string[];
-  heroImage: string;
-  secondaryImages: string[];
-}
-
-const projectsData: Record<string, ProjectDetail> = {
-  mutiny: {
-    title: "MUTINY",
-    role: "Lead Interface & Design Engineer",
-    year: "2026",
-    philosophy: "Atmospheric brutalism.",
-    description: "Mutiny is a design-centric platform built to challenge standard modular layouts. It leverages aggressive grid structures, high-contrast brutalist typography, and fluid, spatial animation layers to create a sensory digital workspace.",
-    tags: ["WebGL", "TailwindCSS", "Framer Motion", "Next.js"],
-    heroImage: "/images/projects/mutiny-hero.png",
-    secondaryImages: [
-      "/images/projects/mutiny-detail-1.png",
-      "/images/projects/mutiny-detail-2.png"
-    ]
-  },
-  steelecareer: {
-    title: "STEELECAREER",
-    role: "Product Designer & ML Engineer",
-    year: "2026",
-    philosophy: "Invisible functionality.",
-    description: "SteeleCareer completely modernizes the talent matching ecosystem. By injecting deep semantic search, customized matches based on neural alignment models, and a sleek Hinge-style onboarding flow, it strips away the friction of job discovery.",
-    tags: ["PyTorch", "Semantic Search", "TypeScript", "Next.js"],
-    heroImage: "/images/projects/steelecareer-hero.png",
-    secondaryImages: [
-      "/images/projects/steelecareer-detail-1.png",
-      "/images/projects/steelecareer-detail-2.png"
-    ]
-  },
-  ghosting: {
-    title: "GHOSTING",
-    role: "Machine Learning Engineer",
-    year: "2026",
-    philosophy: "Emotional resonance through digital form.",
-description: "An investigative machine learning case study exploring customer churn before it happens. Built around XGBoost, behavioral analysis, and narrative-driven data visualization to uncover the subtle signals users leave behind before they quietly disappear.",
-tags: ["Python", "XGBoost", "Pandas", "Scikit-Learn"],
-    heroImage: "/images/projects/ghosting-hero.png",
-    secondaryImages: [
-      "/images/projects/ghosting-detail-1.png",
-      "/images/projects/ghosting-detail-2.png"
-    ]
+function ImageSlot({ src, alt }: { src?: string; alt: string }) {
+  if (!src) {
+    return (
+      <div className="flex h-[44vh] min-h-80 w-full items-center justify-center border border-black/10 bg-black/[0.02]">
+        <div className="max-w-sm px-6 text-center">
+          <span className="mb-4 block text-[0.6rem] font-mono uppercase tracking-[0.2em] text-accent">
+            Screenshot pending
+          </span>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            This project is represented through technical notes and repository evidence rather than invented visuals.
+          </p>
+        </div>
+      </div>
+    );
   }
-};
-
-interface ImageSlotProps {
-  src: string;
-  label: string;
-  aspectRatio: string;
-  isLight?: boolean;
-}
-
-function ImageSlot({ src, label, aspectRatio, isLight = false }: ImageSlotProps) {
-  const [imageError, setImageError] = useState(false);
 
   return (
-    <div className={`w-full ${aspectRatio} relative overflow-hidden group border transition-all duration-[1.5s] ease-[0.16,1,0.3,1] ${
-      isLight 
-        ? "border-[#e5e5ea] bg-white shadow-[0_32px_64px_rgba(0,0,0,0.03)]" 
-        : "border-[#1a1a1f] bg-[#08080a]"
-    }`}>
-      {/* Dynamic Grid Overlay to feel like a high-tech UI canvas */}
-      <div 
-        className={`absolute inset-0 pointer-events-none transition-all duration-[1.5s] ${
-          isLight
-            ? "bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.03]"
-            : "bg-[linear-gradient(to_right,#8b8b99_1px,transparent_1px),linear-gradient(to_bottom,#8b8b99_1px,transparent_1px)] bg-[size:32px_32px] opacity-10"
-        }`} 
+    <div className="relative h-[44vh] min-h-80 w-full overflow-hidden border border-black/10 bg-black/[0.02]">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 1024px) 80vw, 100vw"
+        className="object-contain p-4"
       />
-      
-      {!imageError ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={src}
-          alt={label}
-          onError={() => setImageError(true)}
-          className="w-full h-full object-contain transition-transform duration-[1.5s] ease-[0.16,1,0.3,1] group-hover:scale-105"
-        />
-      ) : null}
-
-      {/* Blueprint Fallback Wireframe when actual screenshot is missing */}
-      {(imageError) && (
-        <div className={`absolute inset-0 flex flex-col justify-between p-8 md:p-12 transition-all duration-[1.5s] ${
-          isLight 
-            ? "text-[#8e8e93] hover:bg-[#fafafb]" 
-            : "text-muted-foreground hover:bg-[#0a0a0d]"
-        }`}>
-          {/* Top Info */}
-          <div className="flex justify-between items-start w-full text-[0.55rem] font-mono tracking-widest uppercase">
-            <span>[ SLOT_ACTIVE ]</span>
-            <span>SPEC: 1920 X 1080</span>
-          </div>
-
-          {/* Center Blueprint Graphics */}
-          <div className="flex flex-col items-center justify-center gap-4 py-8">
-            <div className={`w-16 h-10 border border-dashed relative flex items-center justify-center opacity-40 ${
-              isLight ? "border-[#8e8e93]/40" : "border-muted-foreground/30"
-            }`}>
-              <div className={`absolute inset-0 border rotate-[15deg] scale-105 ${isLight ? "border-[#8e8e93]/10" : "border-muted-foreground/10"}`} />
-              <div className={`absolute inset-0 border -rotate-[15deg] scale-105 ${isLight ? "border-[#8e8e93]/10" : "border-muted-foreground/10"}`} />
-            </div>
-            <span className={`text-[0.6rem] font-mono uppercase tracking-[0.2em] text-center max-w-xs ${
-              isLight ? "text-[#515154]" : "text-accent"
-            }`}>
-              {label}
-            </span>
-          </div>
-
-          {/* Bottom Placement Guide */}
-          <div className="w-full text-center">
-            <p className={`text-[0.5rem] font-mono uppercase tracking-[0.15em] leading-relaxed ${
-              isLight ? "text-[#8e8e93]/80" : "text-muted-foreground/60"
-            }`}>
-              Place screenshot here:<br/>
-              <code className={`lowercase select-all px-2 py-0.5 mt-2 inline-block rounded border ${
-                isLight 
-                  ? "bg-[#f2f2f7] text-[#1d1d1f]/80 border-[#e5e5ea]" 
-                  : "bg-black/40 text-foreground/80 border-white/5"
-              }`}>
-                public{src}
-              </code>
-            </p>
-          </div>
-        </div>
-      )}
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#8b8b99_1px,transparent_1px),linear-gradient(to_bottom,#8b8b99_1px,transparent_1px)] bg-[size:32px_32px] opacity-10" />
     </div>
   );
 }
 
 export default function WorkDetailContent({ slug }: { slug: string }) {
-  const isLight = false;
+  const project = projects.find((item) => item.slug === slug);
 
-  const project = projectsData[slug.toLowerCase()] || {
-    title: slug.toUpperCase(),
-    role: "Lead Engineer / Architect",
-    year: "2026",
-    philosophy: "Digital structuralism.",
-    description: `Exploring the boundaries of spatial structure and fluid interface design in the context of ${slug.toUpperCase()}.`,
-    tags: ["React", "CSS", "Motion"],
-    heroImage: `/images/projects/${slug}-hero.png`,
-    secondaryImages: [
-      `/images/projects/${slug}-detail-1.png`,
-      `/images/projects/${slug}-detail-2.png`
-    ]
-  };
+  if (!project) {
+    return (
+      <main className="relative z-10 flex min-h-screen w-full items-center px-6 md:px-12">
+        <div className="">
+          <span className="mb-5 block text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
+            Project not found
+          </span>
+          <h1 className="mb-8 text-5xl font-bold uppercase tracking-tighter md:text-8xl">
+            No case study for {slug}.
+          </h1>
+          <Link href="/#projects" className="hover-trigger text-[0.65rem] font-mono uppercase tracking-[0.2em] text-foreground">
+            Back to projects
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
+  const evidenceLinks = [
+    project.repoUrl ? { label: "Repository", href: project.repoUrl } : null,
+    project.demoUrl ? { label: "Demo / Source", href: project.demoUrl } : null,
+  ].filter(Boolean) as { label: string; href: string }[];
 
   return (
-    <main className={`relative w-full min-h-screen pt-[25vh] pb-48 flex flex-col z-10 transition-colors duration-[1.5s] ease-[0.16,1,0.3,1] ${
-      isLight ? "bg-[#f5f6f8] text-[#1d1d1f]" : "bg-transparent text-foreground"
-    }`}>
-      
-      {/* Title Header */}
-      <div className={`px-6 md:px-12 mb-20 ${isLight ? "" : "mix-blend-difference"}`}>
-        <motion.div
-          initial={{ opacity: 0, filter: "blur(20px)", y: 50 }}
+    <main className="relative z-10 w-full px-6 pb-28 pt-36 md:px-12 md:pb-36 md:pt-44">
+      <div className="mx-auto w-full max-w-screen-2xl">
+        <motion.header
+          initial={{ opacity: 0, filter: "blur(16px)", y: 28 }}
           animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          transition={{ duration: 2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <span className={`text-[0.55rem] font-mono uppercase tracking-[0.25em] mb-4 block ${
-            isLight ? "text-[#8e8e93]" : "text-accent"
-          }`}>
-            PROJECT DETAIL // ARCHIVE
-          </span>
-          <h1 className={`text-[clamp(3.5rem,12vw,14rem)] font-bold tracking-tighter uppercase leading-[0.85] ${
-            isLight ? "text-[#1d1d1f]" : "text-foreground"
-          }`}>
-            {project.title}
-          </h1>
-        </motion.div>
-      </div>
-
-      {/* Hero Showcase Slot (Large Landscape Screenshot) */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full relative my-12"
-      >
-        <ImageSlot 
-          src={project.heroImage} 
-          label={`${project.title} Hero UI Showcase`} 
-          aspectRatio="h-[60vh] md:h-[90vh]" 
-          isLight={isLight}
-        />
-      </motion.div>
-
-      {/* Project Meta and Description */}
-      <div className={`px-6 md:px-12 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 my-24 ${
-        isLight ? "" : "mix-blend-difference"
-      }`}>
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5 }}
-          className={`col-span-1 flex flex-col gap-8 text-[0.6rem] font-mono uppercase tracking-[0.2em] ${
-            isLight ? "text-[#6e6e73]" : "text-muted-foreground"
-          }`}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_420px]"
         >
           <div>
-            <span className={`block mb-2 text-xs ${isLight ? "text-[#1d1d1f] font-medium" : "text-foreground"}`}>Role</span>
-            {project.role}
+            <span className="mb-5 block text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
+              Case Study / {project.status}
+            </span>
+            <h1 className="mb-8 text-[clamp(4rem,12vw,13rem)] font-bold uppercase leading-[0.82] tracking-tighter">
+              {project.title}
+            </h1>
+            <p className="max-w-4xl text-xl leading-relaxed tracking-tight text-foreground/85 md:text-3xl">
+              {project.problem}
+            </p>
           </div>
-          <div>
-            <span className={`block mb-2 text-xs ${isLight ? "text-[#1d1d1f] font-medium" : "text-foreground"}`}>Year</span>
-            {project.year}
-          </div>
-          <div>
-            <span className={`block mb-2 text-xs ${isLight ? "text-[#1d1d1f] font-medium" : "text-foreground"}`}>Philosophy</span>
-            {project.philosophy}
-          </div>
-          <div>
-            <span className={`block mb-2 text-xs ${isLight ? "text-[#1d1d1f] font-medium" : "text-foreground"}`}>Stack</span>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {project.tags.map((tag) => (
-                <span key={tag} className={`px-2 py-0.5 text-[0.5rem] border ${
-                  isLight 
-                    ? "border-[#e5e5ea] bg-white text-[#1d1d1f] shadow-sm rounded-sm" 
-                    : "border-white/10 text-foreground"
-                }`}>
-                  {tag}
-                </span>
-              ))}
+
+          <aside className="grid content-end gap-8 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-muted-foreground">
+            <div>
+              <span className="mb-2 block text-foreground">Focus</span>
+              {project.label}
             </div>
-          </div>
-        </motion.div>
+            <div>
+              <span className="mb-2 block text-foreground">Year</span>
+              {project.year}
+            </div>
+            <div>
+              <span className="mb-2 block text-foreground">Stack</span>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {project.stack.map((item) => (
+                  <span key={item} className="border border-black/10 px-2.5 py-1 text-[0.55rem]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </aside>
+        </motion.header>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, delay: 0.2 }}
-          className={`col-span-1 md:col-span-2 text-xl md:text-3xl tracking-tight leading-relaxed font-light ${
-            isLight ? "text-[#2c2c2e]" : "text-foreground/90"
-          }`}
-        >
-          {project.description}
-        </motion.div>
-      </div>
+        <ImageSlot src={project.heroImage} alt={`${project.title} project screenshot`} />
 
-      {/* Grid of Secondary Screenshots (Detail Screens) */}
-      <div className="px-6 md:px-12 w-full max-w-7xl mx-auto mt-24">
-        <div className={`border-t pt-12 mb-16 ${
-          isLight ? "border-[#e5e5ea]" : "border-[#1a1a1f]"
-        }`}>
-          <span className={`text-[0.55rem] font-mono uppercase tracking-[0.25em] ${
-            isLight ? "text-[#8e8e93]" : "text-accent"
-          }`}>
-            INTERFACE ARCHITECTURE // DETAILS
-          </span>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {project.secondaryImages.map((imgUrl, index) => (
-            <motion.div
-              key={imgUrl}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 1.5, delay: index * 0.15 }}
-            >
-              <ImageSlot 
-                src={imgUrl} 
-                label={`${project.title} Detail View ${index + 1}`} 
-                aspectRatio="aspect-video" 
-                isLight={isLight}
-              />
-            </motion.div>
+        <section className="my-20 grid grid-cols-1 gap-4 md:grid-cols-3">
+          {[
+            ["Approach", project.approach],
+            ["Model / System", project.modelOrSystem],
+            ["Result", project.result],
+          ].map(([title, copy]) => (
+            <article key={title} className="border border-black/10 bg-black/[0.02] p-6 md:p-8">
+              <span className="mb-5 block text-[0.6rem] font-mono uppercase tracking-[0.2em] text-accent">
+                {title}
+              </span>
+              <p className="text-sm leading-relaxed text-foreground/85">{copy}</p>
+            </article>
           ))}
-        </div>
-      </div>
+        </section>
 
+        <section className="grid grid-cols-1 gap-16 border-t border-black/10 pt-14 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <span className="mb-5 block text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
+              Technical highlights
+            </span>
+            <h2 className="text-4xl font-bold uppercase leading-[0.9] tracking-tighter md:text-6xl">
+              What to inspect.
+            </h2>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            {project.technicalHighlights.map((highlight, index) => (
+              <div key={highlight} className="grid grid-cols-[56px_1fr] gap-4 border-b border-black/10 pb-4">
+                <span className="text-[0.6rem] font-mono uppercase tracking-[0.2em] text-muted-foreground">
+                  0{index + 1}
+                </span>
+                <p className="text-base leading-relaxed text-foreground/85">{highlight}</p>
+              </div>
+            ))}
+
+            {evidenceLinks.length > 0 && (
+              <div className="mt-8 flex flex-wrap gap-3">
+                {evidenceLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover-trigger border border-black/10 px-4 py-3 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-foreground transition-colors hover:border-black/30 hover:bg-black/5"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {project.secondaryImages && (
+          <section className="mt-20 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {project.secondaryImages.map((image, index) => (
+              <ImageSlot
+                key={image}
+                src={image}
+                alt={`${project.title} detail screenshot ${index + 1}`}
+              />
+            ))}
+          </section>
+        )}
+      </div>
     </main>
   );
 }
-

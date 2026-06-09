@@ -33,11 +33,11 @@ function Particles() {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled={false}>
         <PointMaterial
           transparent
-          color="#5a5a64"
+          color="#8d8a80"
           size={0.04}
           sizeAttenuation={true}
           depthWrite={false}
-          opacity={0.3}
+          opacity={0.22}
         />
       </Points>
     </group>
@@ -89,14 +89,14 @@ export default function GlobalScene() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none bg-background">
       <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
-        <fog attach="fog" args={["#020202", 3, 15]} />
-        <ambientLight intensity={0.1} />
+        <fog attach="fog" args={["#f6f5f1", 3, 15]} />
+        <ambientLight intensity={0.45} />
         <SpotLight
           position={[0, 8, 2]}
           angle={0.4}
           penumbra={1}
-          intensity={1.5}
-          color="#8b8b99"
+          intensity={0.65}
+          color="#b8b2a5"
           distance={25}
         />
         <Particles />

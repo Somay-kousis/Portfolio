@@ -1,34 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { profile } from "@/lib/portfolio-data";
+
+const links = [
+  { label: "LinkedIn", href: profile.linkedin },
+  { label: "GitHub", href: profile.github },
+  { label: "LeetCode", href: profile.leetcode },
+];
 
 export default function MomentDeparture() {
   return (
-    <div className="relative w-full h-[150vh] flex flex-col justify-end pb-32">
-      <motion.div 
-        initial={{ opacity: 0, filter: "blur(20px)" }}
-        whileInView={{ opacity: 1, filter: "blur(0px)" }}
-        viewport={{ once: true, margin: "-20%" }}
-        transition={{ duration: 2.5, ease: [0.16, 1, 0.3, 1] }}
-        className="w-full flex justify-center mix-blend-difference"
+    <section className="relative w-full px-6 md:px-12 py-28 md:py-36">
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(18px)", y: 24 }}
+        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        viewport={{ once: true, margin: "-15%" }}
+        transition={{ duration: 1.3, ease: [0.16, 1, 0.3, 1] }}
+        className="mx-auto grid w-full max-w-screen-2xl grid-cols-1 gap-16 border-t border-black/10 pt-16 md:grid-cols-[1fr_420px]"
       >
-        <a href="mailto:somaykaush@gmail.com" className="hover-trigger relative inline-block pointer-events-auto">
-          <span className="text-[clamp(1.5rem,6vw,8rem)] font-bold tracking-tighter text-muted-foreground hover:text-foreground transition-colors duration-1000">
-            SOMAYKAUSH@GMAIL.COM
+        <div>
+          <span className="mb-5 block text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
+            Recruiter path
           </span>
-        </a>
+          <h2 className="max-w-5xl text-[clamp(3rem,8vw,9rem)] font-bold uppercase leading-[0.86] tracking-tighter text-foreground">
+            Want the short version? Start with the projects.
+          </h2>
+        </div>
+
+        <div className="flex flex-col justify-between gap-10">
+          <p className="text-lg leading-relaxed tracking-tight text-foreground/85">
+            I am available for AI/ML engineering opportunities where retrieval, prediction, and product implementation meet. The fastest way to evaluate me is through the case studies and GitHub work.
+          </p>
+          <div className="flex flex-col gap-3">
+            <a
+              href={`mailto:${profile.email}`}
+              className="hover-trigger border border-black/10 px-4 py-3 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-foreground transition-colors hover:border-black/30 hover:bg-black/5"
+            >
+              {profile.email}
+            </a>
+            <div className="grid grid-cols-3 gap-3">
+              {links.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover-trigger border border-black/10 px-4 py-3 text-center text-[0.6rem] font-mono uppercase tracking-[0.16em] text-muted-foreground transition-colors hover:border-black/30 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </motion.div>
-      
-      <div className="absolute bottom-12 left-6 md:left-12 flex flex-col gap-2 text-[0.6rem] font-mono uppercase tracking-[0.2em] text-muted-foreground mix-blend-difference z-10 pointer-events-auto">
-        <a href="https://www.linkedin.com/in/somay-kousis-630ab1313/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover-trigger transition-colors">LinkedIn</a>
-        <a href="https://github.com/Somay-kousis" target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover-trigger transition-colors">GitHub</a>
-        <a href="https://leetcode.com/u/oeuvre/" target="_blank" rel="noopener noreferrer" className="hover:text-foreground hover-trigger transition-colors">LeetCode</a>
-      </div>
-      
-      <div className="absolute bottom-12 right-6 md:right-12 text-[0.6rem] font-mono uppercase tracking-[0.2em] text-muted-foreground mix-blend-difference pointer-events-none text-right">
-        Location: Global <br/>
-        Status: Active
-      </div>
-    </div>
+    </section>
   );
 }
