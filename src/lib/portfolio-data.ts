@@ -29,6 +29,7 @@ export type Project = {
   repoUrl?: string;
   demoUrl?: string;
   heroImage?: string;
+  heroImageAspect?: string;
   secondaryImages?: string[];
 };
 
@@ -54,6 +55,8 @@ export const projects: Project[] = [
       "Runs automated timeline loops that search, review, summarize, update memory, and notify the user.",
     ],
     repoUrl: "https://github.com/Somay-kousis/Co-Founder-Memory",
+    heroImage: "/images/projects/co-founder-memory-workflow.png",
+    heroImageAspect: "2048 / 1078",
   },
   {
     slug: "steelecareer",
@@ -104,6 +107,8 @@ export const projects: Project[] = [
       "Structured funding logic around pledge, escrow, milestone verification, and release states.",
     ],
     repoUrl: "https://github.com/Somay-kousis/Something",
+    heroImage: "/images/projects/something-hero.png",
+    heroImageAspect: "3416 / 1848",
   },
   {
     slug: "ghosting",
@@ -153,6 +158,8 @@ export const projects: Project[] = [
       "Kept the project grounded in reproducible ML workflow basics.",
     ],
     repoUrl: "https://github.com/Somay-kousis/House-Price-Prediction-System",
+    heroImage: "/images/projects/house-price-prediction-clean.png",
+    heroImageAspect: "3289 / 1728",
   },
   {
     slug: "portfolio-ai",
@@ -175,6 +182,8 @@ export const projects: Project[] = [
       "Keeps contact and proof visible even if the assistant is unavailable.",
     ],
     repoUrl: "https://github.com/Somay-kousis/self.so",
+    heroImage: "/images/projects/portfolio-ai-hero.png",
+    heroImageAspect: "1536 / 1024",
   },
 ];
 

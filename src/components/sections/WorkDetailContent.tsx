@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/portfolio-data";
 
-function ImageSlot({ src, alt }: { src?: string; alt: string }) {
+function ImageSlot({ src, alt, aspectRatio = "2048 / 1078" }: { src?: string; alt: string; aspectRatio?: string }) {
   if (!src) {
     return (
       <div className="flex h-[44vh] min-h-80 w-full items-center justify-center border border-black/10 bg-black/[0.02]">
@@ -22,13 +22,16 @@ function ImageSlot({ src, alt }: { src?: string; alt: string }) {
   }
 
   return (
-    <div className="relative h-[44vh] min-h-80 w-full overflow-hidden border border-black/10 bg-black/[0.02]">
+    <div
+      className="relative min-h-80 w-full overflow-hidden border border-black/10 bg-black/[0.02]"
+      style={{ aspectRatio }}
+    >
       <Image
         src={src}
         alt={alt}
         fill
         sizes="(min-width: 1024px) 80vw, 100vw"
-        className="object-contain p-4"
+        className="object-contain p-3 md:p-6"
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#8b8b99_1px,transparent_1px),linear-gradient(to_bottom,#8b8b99_1px,transparent_1px)] bg-[size:32px_32px] opacity-10" />
     </div>
@@ -104,7 +107,11 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
           </aside>
         </motion.header>
 
-        <ImageSlot src={project.heroImage} alt={`${project.title} project screenshot`} />
+        <ImageSlot
+          src={project.heroImage}
+          alt={`${project.title} project screenshot`}
+          aspectRatio={project.heroImageAspect}
+        />
 
         <section className="my-20 grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
