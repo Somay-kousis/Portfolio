@@ -13,7 +13,7 @@ export default function MomentSystems() {
             Technical Core
           </span>
           <h2 className="mb-8 max-w-xl text-4xl font-bold uppercase leading-[0.9] tracking-tighter md:text-7xl">
-            ML depth, applied AI, and product systems.
+            Agentic AI, retrieval, and product systems.
           </h2>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
             The portfolio is intentionally weighted toward what hiring teams can evaluate: tools, project choices, implementation tradeoffs, and communication.

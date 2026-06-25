@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { profile, technicalCore } from "@/lib/portfolio-data";
 
 const fit = [
-  "Applied AI and ML engineering roles where retrieval, prediction, and product implementation overlap.",
-  "Teams that need someone comfortable moving from messy data or vague product intent into a working system.",
+  "Applied AI engineering roles where agentic workflows, retrieval, and product implementation overlap.",
+  "Teams that need someone comfortable moving from messy context or vague product intent into a working system.",
   "Early-stage environments where modeling judgment, interface clarity, and shipping discipline all matter.",
 ];
 
@@ -28,14 +28,14 @@ export default function AboutContent() {
             </h1>
           </div>
           <p className="self-end text-lg leading-relaxed tracking-tight text-foreground/85">
-            I am Somay Kousis, an AI/ML engineer focused on retrieval systems, prediction workflows, and product-grade implementation. My strongest work sits where model behavior, data shape, and user experience have to agree.
+            I am Somay Kousis, an AI engineer focused on agentic systems, retrieval workflows, and product-grade implementation. My strongest work sits where model behavior, state design, and user experience have to agree.
           </p>
         </motion.header>
 
         <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             ["How I work", "I start from the user problem, make the system inspectable, and avoid hiding weak evidence behind big language."],
-            ["What I build", "RAG flows, semantic matching, supervised prediction projects, and deployment-ready product systems."],
+            ["What I build", "Agentic workflows, RAG flows, semantic matching, and deployment-ready product systems."],
             ["Current state", "Available for AI/ML engineering opportunities and continuing to build applied AI systems in public."],
           ].map(([title, copy]) => (
             <article key={title} className="border border-black/10 bg-black/[0.02] p-6 md:p-8">

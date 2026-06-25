@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const projects = [
-  { id: "01", title: "Mutiny", role: "Design / Engineering", year: "2025" },
-  { id: "02", title: "SteeleCareer", role: "Product / ML", year: "2024" },
-  { id: "03", title: "House Price Prediction", role: "Machine Learning", year: "2024" },
-  { id: "04", title: "Customer Churn Prediction", role: "Data Science", year: "2023" },
-  { id: "05", title: "Zuuush", role: "Engineering", year: "2023" },
+  { id: "01", title: "RabbitHole", role: "Agentic AI / LangGraph", year: "2026" },
+  { id: "02", title: "Co-Founder Memory", role: "Memory / RAG", year: "2026" },
+  { id: "03", title: "SteeleCareer", role: "Product / ML", year: "2026" },
+  { id: "04", title: "Portfolio AI", role: "RAG / Interface", year: "2026" },
+  { id: "05", title: "Ghosting", role: "Prediction / ML", year: "2026" },
 ];
 
 export default function SelectedWork() {

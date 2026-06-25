@@ -9,9 +9,9 @@ export const profile = {
 };
 
 export const proofPoints = [
+  "Built agentic AI systems with LangGraph orchestration, parallel nodes, HITL routing, and inspectable state.",
   "Built retrieval and semantic-search systems around embeddings, vector search, and grounded responses.",
-  "Shipped prediction projects using feature engineering, XGBoost, scikit-learn, and model evaluation.",
-  "Connects ML implementation with product workflows, deployment constraints, and clear user-facing outcomes.",
+  "Connects AI implementation with product workflows, deployment constraints, and clear user-facing outcomes.",
 ];
 
 export type Project = {
@@ -34,6 +34,28 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    slug: "rabbithole",
+    title: "RabbitHole",
+    label: "Agentic AI / Multi-Agent Courtroom",
+    year: "2026",
+    status: "LangGraph system",
+    problem:
+      "Messy public questions rarely have one clean answer; they need competing perspectives, hidden incentives, contradiction tracking, and a way for users to keep steering the investigation.",
+    approach:
+      "Built a courtroom-style exploration engine where a moderator assigns roles, perspectives argue in parallel, a judiciary reasons over public statements, and the user can continue, add input, or generate a final conclusion.",
+    modelOrSystem:
+      "LangGraph orchestration with query refinement, role assignment, parallel perspective nodes, reducer-based state merging, HITL routing, judiciary reasoning, and final conclusion generation over local Ollama models.",
+    result:
+      "Turned a vague multi-agent idea into a working graph architecture that is small enough to inspect and flexible enough to extend toward RAG, MCP-style tools, FastAPI, Docker, and DSPy evaluation.",
+    stack: ["LangGraph", "Agentic AI", "Python", "Ollama", "RAG", "MCP", "FastAPI", "Docker", "DSPy"],
+    technicalHighlights: [
+      "Runs perspective generators in parallel and merges state by perspective id.",
+      "Separates graph wiring, routing, state, reducers, prompts, and node behavior for simpler inspection.",
+      "Supports three HITL paths: continue debate, continue debate with input, or generate conclusion.",
+    ],
+    repoUrl: "https://github.com/Somay-kousis/RabbitHole",
+  },
   {
     slug: "co-founder-memory",
     title: "Co-Founder Memory",
@@ -189,16 +211,16 @@ export const projects: Project[] = [
 
 export const technicalCore = [
   {
-    title: "Machine Learning",
-    items: ["PyTorch", "XGBoost", "Scikit-learn", "Pandas", "Feature Engineering", "Model Evaluation"],
+    title: "Agentic AI",
+    items: ["LangGraph", "Agentic Systems", "MCP", "HITL", "DSPy", "Ollama"],
   },
   {
     title: "Applied AI",
-    items: ["RAG", "Embeddings", "Vector Search", "Semantic Search", "LangGraph", "Agentic Systems"],
+    items: ["RAG", "Embeddings", "Vector Search", "Semantic Search", "Memory Systems", "Evaluation"],
   },
   {
     title: "Product Systems",
-    items: ["FastAPI", "Next.js", "TypeScript", "Supabase", "API Design", "Deployment"],
+    items: ["FastAPI", "Docker", "Next.js", "TypeScript", "Supabase", "API Design"],
   },
 ];
 
