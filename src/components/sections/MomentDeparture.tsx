@@ -30,7 +30,7 @@ export default function MomentDeparture() {
 
         <div className="flex flex-col justify-between gap-10">
           <p className="text-lg leading-relaxed tracking-tight text-foreground/85">
-            I am available for AI/ML engineering opportunities where retrieval, prediction, and product implementation meet. The fastest way to evaluate me is through the case studies and GitHub work.
+            I am available for AI/ML engineering opportunities where retrieval, agentic workflows, and product implementation meet. The fastest way to evaluate me is through the case studies and GitHub work.
           </p>
           <div className="flex flex-col gap-3">
             <a

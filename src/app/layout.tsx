@@ -11,7 +11,7 @@ import WarningSuppressor from "@/components/layout/WarningSuppressor";
 
 export const metadata: Metadata = {
   title: "Somay Kousis | AI/ML Engineer",
-  description: "AI/ML engineering portfolio focused on retrieval, prediction, semantic search, and product-grade ML systems.",
+  description: "AI/ML engineering portfolio focused on stateful agentic AI, corrective retrieval (RAG) pipelines, and product-grade ML systems.",
 };
 
 export default function RootLayout({

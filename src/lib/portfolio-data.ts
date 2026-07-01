@@ -4,14 +4,14 @@ export const profile = {
   github: "https://github.com/Somay-kousis",
   linkedin: "https://www.linkedin.com/in/somay-kousis-630ab1313/",
   leetcode: "https://leetcode.com/u/oeuvre/",
-  resume: "/resume.pdf",
+  resume: "https://drive.google.com/file/d/1mU8r2zI36x6aFIVa9dP1By7WiRupzQi_/view?usp=share_link",
   image: "/profile.jpeg",
 };
 
 export const proofPoints = [
-  "Built agentic AI systems with LangGraph orchestration, parallel nodes, HITL routing, and inspectable state.",
-  "Built retrieval and semantic-search systems around embeddings, vector search, and grounded responses.",
-  "Connects AI implementation with product workflows, deployment constraints, and clear user-facing outcomes.",
+  "Built multi-tiered RAG & multi-agent systems with LangGraph, parallel debate nodes, state constraint schemas, and critique loops.",
+  "Engineered hybrid search pipelines (Pinecone + BM25) and Jina Reranking, optimizing latency (MTTV) by ~51%.",
+  "Designed non-generic premium client frontends using Next.js 15 & React 19, dockerized environments, and custom MCP integrations.",
 ];
 
 export type Project = {
@@ -41,20 +41,22 @@ export const projects: Project[] = [
     year: "2026",
     status: "LangGraph system",
     problem:
-      "Messy public questions rarely have one clean answer; they need competing perspectives, hidden incentives, contradiction tracking, and a way for users to keep steering the investigation.",
+      "Messy public debates and complex legal scenarios resist simple, consensus-driven answers, and LLMs under prompt constraints frequently suffer from token overruns and perspective compliance issues.",
     approach:
-      "Built a courtroom-style exploration engine where a moderator assigns roles, perspectives argue in parallel, a judiciary reasons over public statements, and the user can continue, add input, or generate a final conclusion.",
+      "Built a stateful multi-agent courtroom architecture with a moderator node scheduling parallel advocate/critic perspectives. Implemented a self-correcting RAG sub-graph combining Pinecone/BM25 search, Jina Reranking, and Self-RAG hallucination auditing.",
     modelOrSystem:
-      "LangGraph orchestration with query refinement, role assignment, parallel perspective nodes, reducer-based state merging, HITL routing, judiciary reasoning, and final conclusion generation over local Ollama models.",
+      "Hierarchical LangGraph orchestration featuring State-Based Schema Constraints to restrict token usage, a Corrective RAG (CRAG) fallback using Jina Web Search, and dual-tier model routing (Llama-3.3-70B and smaller models).",
     result:
-      "Turned a vague multi-agent idea into a working graph architecture that is small enough to inspect and flexible enough to extend toward RAG, MCP-style tools, FastAPI, Docker, and DSPy evaluation.",
-    stack: ["LangGraph", "Agentic AI", "Python", "Ollama", "RAG", "MCP", "FastAPI", "Docker", "DSPy"],
+      "Optimized execution latency (MTTV) by 51% (from 19.8s to 9.8s) while completely neutralizing token overruns. Delivered a modular, inspectable Python engine alongside a Next.js/React debug interface.",
+    stack: ["LangGraph", "Corrective RAG", "Jina Rerank", "Python", "FastAPI", "Pinecone & BM25", "Docker", "Groq Optimization"],
     technicalHighlights: [
-      "Runs perspective generators in parallel and merges state by perspective id.",
-      "Separates graph wiring, routing, state, reducers, prompts, and node behavior for simpler inspection.",
-      "Supports three HITL paths: continue debate, continue debate with input, or generate conclusion.",
+      "Strict State-Based Schema Constraints resolving prompt-based perspective compliance issues.",
+      "Self-RAG Hallucination Auditor loop utilizing Jina Rerank and Corrective web search fallback.",
+      "Dynamic model routing and moderator partitioning reducing daily token consumption under Groq rate limits."
     ],
     repoUrl: "https://github.com/Somay-kousis/RabbitHole",
+    heroImage: "https://cdn.phototourl.com/free/2026-07-01-7f4fad58-9b7d-49c6-9c47-830d70558b84.jpg",
+    heroImageAspect: "1600 / 918",
   },
   {
     slug: "co-founder-memory",
@@ -65,19 +67,19 @@ export const projects: Project[] = [
     problem:
       "Most AI assistants answer the current prompt but lose long-term builder context, project momentum, and evolving preferences.",
     approach:
-      "Built a stateful co-founder assistant that captures engineering logs, extracts persistent preferences, compiles chronological dossiers, and routes work through critique-driven graph loops.",
+      "Built a long-term stateful assistant that automatically maps developer logs, persistent preference states, and builds chronological profiles using LangGraph.",
     modelOrSystem:
-      "LangGraph multi-agent system with permanent memory stores, Chroma/Supabase retrieval, self-correcting RAG checks, DuckDuckGo fallback search, and scheduled dossier generation.",
+      "Multi-agent memory loop with Chroma/Supabase vector storage, Self-Corrective RAG verification, and scheduled dossier compilation.",
     result:
       "Created a memory system that preserves continuity across projects and exposes a technically inspectable architecture for retrieval, planning, and automated review.",
-    stack: ["LangGraph", "Python", "Chroma", "Supabase", "CRAG/SRAG", "FastAPI"],
+    stack: ["LangGraph", "Python", "Chroma", "Supabase", "CRAG / SRAG", "FastAPI", "Docker"],
     technicalHighlights: [
       "Routes requests across conversational, planning, memory extraction, and RAG tracks.",
       "Grades retrieved documents and generated answers before accepting the response path.",
       "Runs automated timeline loops that search, review, summarize, update memory, and notify the user.",
     ],
     repoUrl: "https://github.com/Somay-kousis/Co-Founder-Memory",
-    heroImage: "/images/projects/co-founder-memory-workflow.png",
+    heroImage: "https://www.image2url.com/r2/default/images/1782892828138-eae87302-0978-4734-80b3-5e39d2947178.jpg",
     heroImageAspect: "2048 / 1078",
   },
   {
@@ -102,11 +104,7 @@ export const projects: Project[] = [
     ],
     demoUrl: "https://github.com/Somay-kousis/SteelCareer",
     repoUrl: "https://github.com/Somay-kousis/SteelCareer",
-    heroImage: "/images/projects/steelecareer-hero.png",
-    secondaryImages: [
-      "/images/projects/steelecareer-detail-1.png",
-      "/images/projects/steelecareer-detail-2.png",
-    ],
+    heroImage: "https://cdn.phototourl.com/free/2026-07-01-ba7ab812-f83d-402d-927a-5b05afb0a812.png",
   },
   {
     slug: "something",
@@ -117,110 +115,40 @@ export const projects: Project[] = [
     problem:
       "Startup platforms usually optimize visibility and pitch polish, but early ideas need critique, trust, milestone clarity, and emotionally-aware validation.",
     approach:
-      "Built an experimental founder-investor ecosystem with two AI personas: Some for critical investor pressure-testing and Thing for empathetic operator feedback.",
+      "Designed a dual-agent operator-critic validation environment (Something & Nothing) where founders test ideas. Structured a secure Milestone Escrow Pipeline to release funds based on verified proof logs.",
     modelOrSystem:
-      "Next.js and React frontend paired with an Express/MongoDB backend, JWT auth, founder and investor flows, AI-assisted validation, funding campaigns, trust tracking, and milestone release logic.",
+      "Next.js 15, React 19, and Radix UI frontend integrated with a Node.js/Express backend, Mongoose schema escrow states, similarity index calculation vectors, and custom spatial-aware blurs.",
     result:
-      "Shows full-stack product architecture around AI-assisted decision-making, transparent funding workflows, and trust as visible infrastructure.",
-    stack: ["Next.js", "React", "TypeScript", "Express", "MongoDB", "Three.js"],
+      "Rebranded Mutiny into a stunning, non-generic, premium dark-mode platform. Established a verified trust layer where payout release is committee-controlled by proof logs.",
+    stack: ["Next.js 15", "React 19", "Express", "MongoDB", "Tailwind CSS", "Framer Motion", "Supabase & Render MCP"],
     technicalHighlights: [
-      "Designed separate founder and investor workflows around idea posting, discovery, messaging, and milestone monitoring.",
-      "Modeled Some and Thing as complementary critique modes for idea validation and founder support.",
-      "Structured funding logic around pledge, escrow, milestone verification, and release states.",
+      "Milestone Escrow Pipeline requiring ≥50% committee verification of submitted GitHub/test logs.",
+      "Dual-agent operator (Something/Belief) and critic (Nothing/Doubt) validation modes.",
+      "Premium dark-mode UI with custom glassmorphism, spatial equilibrium indicators, and fluid Framer Motion transitions."
     ],
     repoUrl: "https://github.com/Somay-kousis/Something",
-    heroImage: "/images/projects/something-hero.png",
-    heroImageAspect: "3416 / 1848",
-  },
-  {
-    slug: "ghosting",
-    title: "Ghosting",
-    label: "Churn Prediction / Explainability",
-    year: "2026",
-    status: "Case study",
-    problem:
-      "Customer churn is easy to notice after the fact and harder to detect while behavioral signals are still subtle.",
-    approach:
-      "Built an investigative ML workflow around churn signals, feature preparation, model training, and narrative analysis.",
-    modelOrSystem:
-      "XGBoost classification pipeline supported by pandas, scikit-learn, and behavioral feature exploration.",
-    result:
-      "Turned churn prediction into a readable case study that explains both the modeling path and the product risk behind the model.",
-    stack: ["Python", "XGBoost", "Pandas", "Scikit-learn", "Explainability"],
-    technicalHighlights: [
-      "Prepared behavioral features for supervised churn classification.",
-      "Used model outputs to reason about user-risk signals.",
-      "Framed predictions in a way non-ML stakeholders can understand.",
-    ],
-    repoUrl: "https://github.com/Somay-kousis/Customer-Churn",
-    heroImage: "/images/projects/ghosting-hero.png",
+    heroImage: "https://cdn.phototourl.com/free/2026-07-01-13c4bf34-3456-49ce-95fd-f439a1da5f26.png",
+    heroImageAspect: "3372 / 1822",
     secondaryImages: [
-      "/images/projects/ghosting-detail-1.png",
-      "/images/projects/ghosting-detail-2.png",
+      "https://cdn.phototourl.com/free/2026-07-01-52fabeab-0128-4a38-96a2-b2e93cb7a631.png",
+      "https://cdn.phototourl.com/free/2026-07-01-82b2825b-c2a7-4dd1-ac08-dbeb4d795ae2.png",
     ],
   },
-  {
-    slug: "house-price-prediction",
-    title: "House Price Prediction",
-    label: "Regression / Feature Engineering",
-    year: "2026",
-    status: "ML project",
-    problem:
-      "Housing-price prediction depends on turning messy property attributes into useful model signals.",
-    approach:
-      "Built a regression workflow focused on feature engineering, preprocessing, evaluation, and model iteration.",
-    modelOrSystem:
-      "Structured ML pipeline using Python data tooling and gradient-boosted modeling patterns.",
-    result:
-      "Demonstrates practical model-building fundamentals: data preparation, validation, and iterative optimization.",
-    stack: ["Python", "Feature Engineering", "XGBoost", "Regression", "Model Evaluation"],
-    technicalHighlights: [
-      "Converted raw property fields into model-ready features.",
-      "Compared predictive behavior through validation-focused iteration.",
-      "Kept the project grounded in reproducible ML workflow basics.",
-    ],
-    repoUrl: "https://github.com/Somay-kousis/House-Price-Prediction-System",
-    heroImage: "/images/projects/house-price-prediction-clean.png",
-    heroImageAspect: "3289 / 1728",
-  },
-  {
-    slug: "portfolio-ai",
-    title: "Portfolio AI",
-    label: "RAG / Grounded Answers",
-    year: "2026",
-    status: "Integrated system",
-    problem:
-      "Static portfolios make recruiters hunt through pages instead of asking targeted questions about a candidate's work.",
-    approach:
-      "Integrated a retrieval-based assistant that answers from a personal knowledge base rather than only using prewritten responses.",
-    modelOrSystem:
-      "RAG flow using documents, chunking, embeddings, vector retrieval, and a response layer exposed through the portfolio.",
-    result:
-      "Gives the portfolio an interactive layer while keeping the main recruiter path clear and evidence-first.",
-    stack: ["RAG", "Embeddings", "Vector Search", "Next.js API Routes", "LLaMA"],
-    technicalHighlights: [
-      "Proxies portfolio questions through a dedicated chat API route.",
-      "Uses retrieval as the core answer strategy rather than a static FAQ.",
-      "Keeps contact and proof visible even if the assistant is unavailable.",
-    ],
-    repoUrl: "https://github.com/Somay-kousis/self.so",
-    heroImage: "/images/projects/portfolio-ai-hero.png",
-    heroImageAspect: "1536 / 1024",
-  },
+
 ];
 
 export const technicalCore = [
   {
     title: "Agentic AI",
-    items: ["LangGraph", "Agentic Systems", "MCP", "HITL", "DSPy", "Ollama"],
+    items: ["LangGraph", "Agentic Systems", "MCP", "HITL", "State Schema Constraints", "Ollama"],
   },
   {
-    title: "Applied AI",
-    items: ["RAG", "Embeddings", "Vector Search", "Semantic Search", "Memory Systems", "Evaluation"],
+    title: "Applied AI / RAG",
+    items: ["CRAG / SRAG", "Jina Reranker", "Hybrid Search", "Vector Search (Pinecone/Chroma)", "Memory Systems", "DSPy Evaluation"],
   },
   {
     title: "Product Systems",
-    items: ["FastAPI", "Docker", "Next.js", "TypeScript", "Supabase", "API Design"],
+    items: ["FastAPI", "Next.js 15 / React 19", "Multi-Container Docker", "Supabase & Render", "Express / Node", "API Design"],
   },
 ];
 

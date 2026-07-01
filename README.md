@@ -106,6 +106,24 @@ https://github.com/Somay-kousis/self.so
 ## PROJECTS
 
 ```text
+RabbitHole
+│
+├─ Courtroom Orchestrator
+├─ Multi-Tier RAG (CRAG + SRAG + Jina Rerank)
+└─ LangGraph Stateful Agent
+
+Something
+│
+├─ Operator-Critic Duality Personas
+├─ Milestone Escrow Pipeline
+└─ Next.js 15 & React 19 Rebuild
+
+Co-Founder Memory
+│
+├─ Stateful Log Sync
+├─ Chroma Memory Retrieval
+└─ Log to Dossier Loops
+
 SteelCareer
 │
 ├─ Multi-role platform
@@ -113,29 +131,6 @@ SteelCareer
 ├─ Supabase
 └─ Production Client Work
 
-Mutiny
-│
-├─ Founder discovery platform
-├─ Matching systems
-└─ Active Development
-
-Portfolio AI
-│
-├─ RAG
-├─ Vector Search
-└─ Conversational Retrieval
-
-House Price Prediction
-│
-├─ Feature Engineering
-├─ XGBoost
-└─ Model Optimization
-
-Customer Churn Prediction
-│
-├─ Classification
-├─ Explainability
-└─ Threshold Optimization
 ```
 
 ---
@@ -143,12 +138,12 @@ Customer Churn Prediction
 ## CURRENT DIRECTION
 
 ```text
-RAG
 LangGraph
-Agentic AI
-MCP
-FastAPI
-PyTorch
+Multi-Tier RAG
+Agentic AI & Memory Systems
+MCP & Integrations
+Multi-Container Docker
+FastAPI & Next.js 15 / React 19
 ```
 
 Building systems that combine:

@@ -7,8 +7,7 @@ const projects = [
   { id: "01", title: "RabbitHole", role: "Agentic AI / LangGraph", year: "2026" },
   { id: "02", title: "Co-Founder Memory", role: "Memory / RAG", year: "2026" },
   { id: "03", title: "SteeleCareer", role: "Product / ML", year: "2026" },
-  { id: "04", title: "Portfolio AI", role: "RAG / Interface", year: "2026" },
-  { id: "05", title: "Ghosting", role: "Prediction / ML", year: "2026" },
+  { id: "04", title: "Something", role: "AI Personas / Escrow", year: "2026" },
 ];
 
 export default function SelectedWork() {
@@ -18,7 +17,7 @@ export default function SelectedWork() {
     <section className="relative w-full min-h-screen py-32 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col justify-center">
       <div className="flex justify-between items-end mb-24 md:mb-40">
         <h2 className="text-sm uppercase tracking-widest text-muted-foreground">Selected Work</h2>
-        <span className="text-xs font-mono opacity-50">(01 — 05)</span>
+        <span className="text-xs font-mono opacity-50">(01 — 04)</span>
       </div>
 
       <div className="flex flex-col w-full relative z-10">

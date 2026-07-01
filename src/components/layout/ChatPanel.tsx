@@ -28,7 +28,7 @@ export default function ChatPanel({ isOpen, onClose }: ChatPanelProps) {
     {
       id: "greeting",
       sender: "bot",
-      text: "Ask me about Somay's AI/ML projects, retrieval work, prediction systems, or contact details. I will keep the answer focused on portfolio evidence.",
+      text: "Ask me about Somay's AI/ML projects, retrieval systems, full-stack platforms, or contact details. I will keep the answer focused on portfolio evidence.",
       timestamp: "Now",
     },
   ]);

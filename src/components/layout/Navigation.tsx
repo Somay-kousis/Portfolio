@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { profile } from "@/lib/portfolio-data";
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -10,7 +11,7 @@ export default function Navigation() {
     { href: "/#projects", label: "Projects", active: false },
     { href: "/about", label: "About", active: pathname === "/about" },
     { href: "/writing", label: "Notes", active: pathname === "/writing" },
-    { href: "/resume.pdf", label: "Resume", active: false },
+    { href: profile.resume, label: "Resume", active: false },
   ];
 
   return (
@@ -25,6 +26,8 @@ export default function Navigation() {
           <Link
             key={link.label}
             href={link.href}
+            target={link.href.startsWith("http") ? "_blank" : undefined}
+            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
             className={`text-[0.6rem] font-mono uppercase tracking-[0.2em] transition-colors hover-trigger ${link.active ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`}
           >
             {link.label}

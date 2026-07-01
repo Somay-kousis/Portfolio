@@ -23,7 +23,7 @@ export default function MomentArrival() {
         >
           <div>
             <p className="mb-8 text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
-              AI Engineer / Agentic Systems / RAG / Product Systems
+              AI Engineer / Agentic Systems / Multi-Tier RAG / Full-Stack Products
             </p>
             <h1 className="max-w-6xl text-[clamp(3.6rem,10vw,11rem)] font-bold uppercase leading-[0.82] tracking-tighter text-foreground">
               Building AI systems recruiters can inspect.
@@ -52,7 +52,7 @@ export default function MomentArrival() {
               </div>
             </div>
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-foreground/90">
-              I build agentic AI, retrieval, and product-grade systems with enough implementation detail to inspect and enough product sense to ship.
+              I build stateful multi-agent systems, corrective retrieval pipelines, and premium product-grade software with enough architectural detail to inspect and enough product polish to ship.
             </p>
             <div className="grid grid-cols-2 gap-3">
               {ctas.map((cta) => (
