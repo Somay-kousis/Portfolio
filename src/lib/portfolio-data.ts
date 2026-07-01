@@ -102,7 +102,6 @@ export const projects: Project[] = [
       "Connected ML-facing ranking logic to a usable product flow.",
       "Kept the system explainable enough for recruiter and candidate workflows.",
     ],
-    demoUrl: "https://github.com/Somay-kousis/SteelCareer",
     repoUrl: "https://github.com/Somay-kousis/SteelCareer",
     heroImage: "https://cdn.phototourl.com/free/2026-07-01-ba7ab812-f83d-402d-927a-5b05afb0a812.png",
   },
