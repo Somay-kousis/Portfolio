@@ -147,6 +147,8 @@ export const projects: Project[] = [
       "Tested against a real cluster rather than mocks, including an explicit test asserting the decision model is real Nova and not stubbed.",
     ],
     repoUrl: "https://github.com/Somay-kousis/PaperPlanes",
+    heroImage: "/images/projects/paperplanes-hero.png",
+    heroImageAspect: "1024 / 496",
   },
   {
     slug: "podman-flake-agent",
