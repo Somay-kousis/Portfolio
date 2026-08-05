@@ -249,6 +249,8 @@ export const projects: Project[] = [
       "Explore-exploit price convergence in log2(90) rounds, roughly 7, with learned seller limits surviving a pool reset.",
     ],
     repoUrl: "https://github.com/Somay-kousis/Co-op-Purchase-Coordinator",
+    heroImage: "/images/projects/coop-purchase-hero.jpg",
+    heroImageAspect: "1024 / 650",
   },
   {
     slug: "co-founder-memory",
