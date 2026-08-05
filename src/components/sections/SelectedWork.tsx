@@ -6,8 +6,8 @@ import { useState } from "react";
 const projects = [
   { id: "01", title: "RabbitHole", role: "Agentic AI / LangGraph", year: "2026" },
   { id: "02", title: "Co-Founder Memory", role: "Memory / RAG", year: "2026" },
-  { id: "03", title: "SteeleCareer", role: "Product / ML", year: "2026" },
-  { id: "04", title: "Something", role: "AI Personas / Escrow", year: "2026" },
+  { id: "03", title: "PaperPlanes", role: "Bi-temporal Memory", year: "2026" },
+  { id: "04", title: "Something", role: "AI Personas / Platform", year: "2026" },
 ];
 
 export default function SelectedWork() {

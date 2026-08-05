@@ -270,34 +270,6 @@ export const projects: Project[] = [
     heroImage: "https://www.image2url.com/r2/default/images/1782892828138-eae87302-0978-4734-80b3-5e39d2947178.jpg",
     heroImageAspect: "2048 / 1078",
   },
-  {
-    slug: "steelecareer",
-    title: "SteelCareer",
-    label: "Full-Stack Product / Client Work",
-    year: "2026",
-    status: "Production client work",
-    problem:
-      "A client needed one international hiring platform serving three different audiences, seekers, providers, and admins, without three separate applications to maintain, and explicitly built on human introductions rather than algorithmic matching.",
-    approach:
-      "Designed a multi-role product against a single shared data model, so each audience sees a different surface over the same records rather than a forked codebase. Structured hiring around trust and coordination instead of a ranking engine, which was the client's actual requirement.",
-    modelOrSystem:
-      "Next.js application with Supabase-backed data and role-scoped access, deployed on Vercel, with TypeScript application logic throughout.",
-    result:
-      "Delivered job workflows, approval chains, interview scheduling, authentication, and analytics as a working product, taken from requirements to deployment as the sole developer.",
-    stack: ["Next.js", "TypeScript", "Supabase", "Vercel"],
-    technicalHighlights: [
-      "Three role surfaces (seeker, provider, admin) over one shared schema with role-scoped access.",
-      "Approval chains and interview scheduling modeled as explicit workflow state rather than boolean flags.",
-      "Shipped and handed over to a real client on a fixed timeline.",
-    ],
-    repoUrl: "https://github.com/Somay-kousis/SteelCareer",
-    demoUrl: "https://steel-career-415l4p5or-somaykaush-6383s-projects.vercel.app",
-    heroImage: "/images/projects/steelecareer-hero.png",
-    secondaryImages: [
-      "/images/projects/steelecareer-detail-1.png",
-      "/images/projects/steelecareer-detail-2.png",
-    ],
-  },
 ];
 
 export const technicalCore = [
