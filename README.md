@@ -3,7 +3,7 @@
 # portfolio
 
 ```
-you are currently viewing an archived system
+you are reading the source of a system that is currently running
 ```
 
 <br>
@@ -19,15 +19,15 @@ active
 
 ---CURRENT OBSESSION---
 
-building whimsical things
+memory that survives being contradicted
 
 ---DIRECTION---
 
-frontend × ai
+agentic systems × the part that proves they work
 
 ---STABILITY---
 
-questionable
+tested against real infrastructure, so: earned
 
 ---LAST UPDATE---
 
@@ -47,7 +47,9 @@ It's closer to an interactive environment.
 
 The goal wasn't to display projects.
 
-The goal was to create a space that feels alive.
+The goal was to make the work checkable, and to make checking it feel like something.
+
+Every number on the site comes with the command that reproduces it.
 
 Everything inside the site exists for the same reason:
 
@@ -70,66 +72,58 @@ Everything inside the site exists for the same reason:
 │         MOTION & TRANSITIONS        │
 ├─────────────────────────────────────┤
 │          PROJECT SYSTEMS            │
-├─────────────────────────────────────┤
-│         PORTFOLIO AI LAYER          │
 └─────────────────────────────────────┘
 ```
-
----
-
-## PORTFOLIO AI
-
-A retrieval-based AI system integrated into the portfolio.
-
-Instead of predefined responses, the system retrieves context from a personal knowledge base and answers using grounded information.
-
-```text
-documents
-    ↓
-chunking
-    ↓
-embeddings
-    ↓
-vector search
-    ↓
-retrieval
-    ↓
-response
-```
-
-Repository:
-
-https://github.com/Somay-kousis/self.so
 
 ---
 
 ## PROJECTS
 
 ```text
+PaperPlanes
+│
+├─ CockroachDB memory substrate
+├─ Bi-temporal fact versioning
+├─ 25/25 writes under contention
+└─ MCP self-introspection
+
+Podman Flake Agent
+│
+├─ Agentic CI flake triage
+├─ 76-93% log payload reduction
+├─ Abstention as a first-class verdict
+└─ LFX Mentorship prototype
+
 RabbitHole
 │
 ├─ Courtroom Orchestrator
-├─ Multi-Tier RAG (CRAG + SRAG + Jina Rerank)
-└─ LangGraph Stateful Agent
+├─ Pinecone + BM25 hybrid, Jina rerank
+├─ CRAG + Self-RAG
+└─ 19.8s to 9.8s mean time to verdict
 
 Something
 │
-├─ Operator-Critic Duality Personas
-├─ Milestone Escrow Pipeline
-└─ Next.js 15 & React 19 Rebuild
+├─ Founder and investor matching
+├─ Verified-network moat
+└─ Next.js 15 & React 19
+
+Co-op Purchase Coordinator
+│
+├─ Vickrey auctions for agent conflicts
+├─ Shapley coalition discounts
+└─ ~7-round price convergence
 
 Co-Founder Memory
 │
-├─ Stateful Log Sync
-├─ Chroma Memory Retrieval
-└─ Log to Dossier Loops
+├─ 19-node stateful LangGraph
+├─ Supabase pgvector + HNSW
+└─ Nightly dossier loops
 
 SteelCareer
 │
-├─ Multi-role platform
-├─ Next.js
-├─ Supabase
-└─ Production Client Work
+├─ Multi-role hiring platform
+├─ Next.js, Supabase, Vercel
+└─ Production client work
 
 ```
 
@@ -138,11 +132,11 @@ SteelCareer
 ## CURRENT DIRECTION
 
 ```text
-LangGraph
-Multi-Tier RAG
-Agentic AI & Memory Systems
-MCP & Integrations
-Multi-Container Docker
+LangGraph & agentic orchestration
+Persistent memory and bi-temporal state
+Retrieval, reranking, and corrective RAG
+Evaluation harnesses and abstention metrics
+MCP & integrations
 FastAPI & Next.js 15 / React 19
 ```
 
@@ -161,6 +155,7 @@ machine learning
 
 ```
 frontend and ai permanently fighting for control of my brain
+(the ai is winning, but the frontend still picks the fonts)
 ```
 
 </div>

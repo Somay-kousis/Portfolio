@@ -16,12 +16,17 @@
   --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --background: #f6f5f1;
-  --foreground: #171717;
-  
+  --foreground: #141414;
+
   --muted: #e7e5dd;
-  --muted-foreground: #6f6b63;
-  
-  --accent: #3f5f4f;
+  --muted-foreground: #5d5952;
+
+  --accent: #2f5343;
+
+  /* Rules: hairline for card edges, strong for structural dividers. */
+  --rule: rgba(20, 20, 20, 0.16);
+  --rule-strong: rgba(20, 20, 20, 0.42);
+  --surface: rgba(20, 20, 20, 0.022);
 }
 
 @layer base {
@@ -40,51 +45,34 @@
   }
 }
 
-.agent-field {
+/* Static paper field. No particles, no colour, nothing that lands on top of text. */
+.page-field {
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 58% 44%, rgba(255, 255, 255, 0.96), transparent 18rem),
-    radial-gradient(circle at 74% 56%, rgba(96, 116, 143, 0.1), transparent 34rem),
-    radial-gradient(circle at 42% 50%, rgba(63, 95, 79, 0.08), transparent 28rem),
-    linear-gradient(to right, rgba(23, 23, 23, 0.028) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(23, 23, 23, 0.028) 1px, transparent 1px),
-    var(--background);
-  background-size: auto, auto, auto, 80px 80px, 80px 80px, auto;
-  overflow: hidden;
+  background-color: var(--background);
 }
 
-.agent-field-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.82;
+/* Structural helpers so rule weight is decided once, not per component. */
+.rule {
+  border-color: var(--rule);
 }
 
-.agent-field::before,
-.agent-field::after {
-  content: "";
-  position: absolute;
-  border: 1px solid rgba(23, 23, 23, 0.055);
-  border-radius: 999px;
-  transform: rotate(-10deg);
+.rule-strong {
+  border-color: var(--rule-strong);
 }
 
-.agent-field::before {
-  width: 52rem;
-  height: 20rem;
-  right: -12rem;
-  top: 8rem;
+.surface {
+  background-color: var(--surface);
 }
 
-.agent-field::after {
-  width: 34rem;
-  height: 13rem;
-  left: -12rem;
-  bottom: 8rem;
+/* Meta labels: the mono uppercase kickers above every section heading. */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 .cinematic-noise {
@@ -105,25 +93,3 @@
   background: transparent;
 }
 
-.chat-messages-container {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
-}
-
-.chat-messages-container::-webkit-scrollbar {
-  width: 4px !important;
-  background: transparent !important;
-}
-
-.chat-messages-container::-webkit-scrollbar-track {
-  background: transparent !important;
-}
-
-.chat-messages-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15) !important;
-  border-radius: 2px !important;
-}
-
-.chat-messages-container::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.25) !important;
-}

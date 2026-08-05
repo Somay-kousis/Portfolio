@@ -6,19 +6,19 @@ import { projects } from "@/lib/portfolio-data";
 
 export default function MomentWork() {
   return (
-    <section id="projects" className="relative w-full px-6 md:px-12 py-28 md:py-36">
+    <section id="projects" className="relative w-full px-6 md:px-12 py-20 md:py-28">
       <div className="mx-auto w-full max-w-screen-2xl">
         <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <span className="mb-5 block text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
-              Selected ML Systems
+              Selected Systems
             </span>
-            <h2 className="max-w-4xl text-4xl font-bold uppercase leading-[0.9] tracking-tighter md:text-7xl">
+            <h2 className="max-w-4xl text-4xl font-bold uppercase leading-[0.9] tracking-tighter md:text-6xl">
               Case studies with a visible technical path.
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Each project is written for a fast scan first, then a deeper read: problem, approach, system, stack, and proof.
+            Each project is written for a fast scan first, then a deeper read: problem, approach, system, stack, and proof. Every one links to its repository.
           </p>
         </div>
 
@@ -26,11 +26,11 @@ export default function MomentWork() {
           {projects.map((project, index) => (
             <motion.article
               key={project.slug}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-10%" }}
-              transition={{ duration: 0.8, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-              className="group border border-black/10 bg-black/[0.02] p-6 transition-colors duration-500 hover:border-black/25 hover:bg-black/[0.04] md:p-8"
+              viewport={{ once: true, amount: 0 }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+              className="group border border-[var(--rule)] bg-[var(--surface)] p-6 transition-colors duration-500 hover:border-black/25 hover:bg-[var(--surface)] md:p-8"
             >
               <Link href={`/work/${project.slug}`} className="hover-trigger block">
                 <div className="mb-10 flex items-start justify-between gap-8">
@@ -55,14 +55,14 @@ export default function MomentWork() {
                   {project.stack.slice(0, 5).map((item) => (
                     <span
                       key={item}
-                      className="border border-black/10 px-2.5 py-1 text-[0.55rem] font-mono uppercase tracking-[0.16em] text-muted-foreground"
+                      className="border border-[var(--rule)] px-2.5 py-1 text-[0.55rem] font-mono uppercase tracking-[0.16em] text-muted-foreground"
                     >
                       {item}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between border-t border-black/10 pt-5 text-[0.65rem] font-mono uppercase tracking-[0.18em]">
+                <div className="flex items-center justify-between border-t border-[var(--rule)] pt-5 text-[0.65rem] font-mono uppercase tracking-[0.18em]">
                   <span className="text-muted-foreground">{project.label}</span>
                   <span className="text-foreground">Read case study</span>
                 </div>

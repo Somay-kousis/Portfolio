@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="relative w-full min-h-[80vh] py-12 px-6 md:px-12 flex flex-col justify-between items-center overflow-hidden border-t border-muted">
       <div className="w-full flex justify-between items-center text-xs font-mono uppercase tracking-widest text-muted-foreground mb-auto">
-        <span>Open for collaboration</span>
+        <span>Open for AI engineering work</span>
         <span>2026 © All Rights Reserved</span>
       </div>
 

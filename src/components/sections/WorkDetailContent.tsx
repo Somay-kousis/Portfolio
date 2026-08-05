@@ -8,7 +8,7 @@ import { projects } from "@/lib/portfolio-data";
 function ImageSlot({ src, alt, aspectRatio = "2048 / 1078" }: { src?: string; alt: string; aspectRatio?: string }) {
   if (!src) {
     return (
-      <div className="flex h-[44vh] min-h-80 w-full items-center justify-center border border-black/10 bg-black/[0.02]">
+      <div className="flex h-[44vh] min-h-80 w-full items-center justify-center border border-[var(--rule)] bg-[var(--surface)]">
         <div className="max-w-sm px-6 text-center">
           <span className="mb-4 block text-[0.6rem] font-mono uppercase tracking-[0.2em] text-accent">
             Screenshot pending
@@ -23,7 +23,7 @@ function ImageSlot({ src, alt, aspectRatio = "2048 / 1078" }: { src?: string; al
 
   return (
     <div
-      className="relative min-h-80 w-full overflow-hidden border border-black/10 bg-black/[0.02]"
+      className="relative min-h-80 w-full overflow-hidden border border-[var(--rule)] bg-[var(--surface)]"
       style={{ aspectRatio }}
     >
       <Image
@@ -65,19 +65,19 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
   ].filter(Boolean) as { label: string; href: string }[];
 
   return (
-    <main className="relative z-10 w-full px-6 pb-28 pt-36 md:px-12 md:pb-36 md:pt-44">
+    <main className="relative z-10 w-full px-6 pb-24 pt-32 md:px-12 md:pb-28 md:pt-36">
       <div className="mx-auto w-full max-w-screen-2xl">
         <motion.header
-          initial={{ opacity: 0, filter: "blur(16px)", y: 28 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_420px]"
         >
           <div>
             <span className="mb-5 block text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
               Case Study / {project.status}
             </span>
-            <h1 className="mb-8 text-[clamp(4rem,12vw,13rem)] font-bold uppercase leading-[0.82] tracking-tighter">
+            <h1 className="mb-8 text-[clamp(2.8rem,7vw,7rem)] font-bold uppercase leading-[0.9] tracking-[-0.03em]">
               {project.title}
             </h1>
             <p className="max-w-4xl text-xl leading-relaxed tracking-tight text-foreground/85 md:text-3xl">
@@ -98,7 +98,7 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
               <span className="mb-2 block text-foreground">Stack</span>
               <div className="mt-3 flex flex-wrap gap-2">
                 {project.stack.map((item) => (
-                  <span key={item} className="border border-black/10 px-2.5 py-1 text-[0.55rem]">
+                  <span key={item} className="border border-[var(--rule)] px-2.5 py-1 text-[0.55rem]">
                     {item}
                   </span>
                 ))}
@@ -119,7 +119,7 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
             ["Model / System", project.modelOrSystem],
             ["Result", project.result],
           ].map(([title, copy]) => (
-            <article key={title} className="border border-black/10 bg-black/[0.02] p-6 md:p-8">
+            <article key={title} className="border border-[var(--rule)] bg-[var(--surface)] p-6 md:p-8">
               <span className="mb-5 block text-[0.6rem] font-mono uppercase tracking-[0.2em] text-accent">
                 {title}
               </span>
@@ -128,7 +128,7 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
           ))}
         </section>
 
-        <section className="grid grid-cols-1 gap-16 border-t border-black/10 pt-14 lg:grid-cols-[0.85fr_1.15fr]">
+        <section className="grid grid-cols-1 gap-16 border-t border-[var(--rule)] pt-14 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <span className="mb-5 block text-[0.65rem] font-mono uppercase tracking-[0.25em] text-accent">
               Technical highlights
@@ -140,7 +140,7 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
 
           <div className="flex flex-col gap-4">
             {project.technicalHighlights.map((highlight, index) => (
-              <div key={highlight} className="grid grid-cols-[56px_1fr] gap-4 border-b border-black/10 pb-4">
+              <div key={highlight} className="grid grid-cols-[56px_1fr] gap-4 border-b border-[var(--rule)] pb-4">
                 <span className="text-[0.6rem] font-mono uppercase tracking-[0.2em] text-muted-foreground">
                   0{index + 1}
                 </span>
@@ -156,7 +156,7 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover-trigger border border-black/10 px-4 py-3 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-foreground transition-colors hover:border-black/30 hover:bg-black/5"
+                    className="hover-trigger border border-[var(--rule)] px-4 py-3 text-[0.65rem] font-mono uppercase tracking-[0.18em] text-foreground transition-colors hover:border-[var(--rule-strong)] hover:bg-black/5"
                   >
                     {link.label}
                   </a>

@@ -12,7 +12,7 @@ export default function MLSystems() {
   return (
     <section className="relative w-full min-h-screen py-32 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col justify-center">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-40 gap-8">
-        <h2 className="text-4xl md:text-7xl font-bold uppercase tracking-tighter max-w-2xl leading-[0.85]">
+        <h2 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter max-w-2xl leading-[0.85]">
           Intelligence <br/><span className="text-muted-foreground">& Architecture</span>
         </h2>
         <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground max-w-xs md:text-right">
