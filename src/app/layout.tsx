@@ -4,14 +4,13 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import CustomCursor from "@/components/layout/CustomCursor";
 import Preloader from "@/components/layout/Preloader";
 import Navigation from "@/components/layout/Navigation";
-import FloatingBot from "@/components/layout/FloatingBot";
-import AgentField from "@/components/layout/AgentField";
 
 import WarningSuppressor from "@/components/layout/WarningSuppressor";
 
 export const metadata: Metadata = {
-  title: "Somay Kousis | AI/ML Engineer",
-  description: "AI/ML engineering portfolio focused on stateful agentic AI, corrective retrieval (RAG) pipelines, and product-grade ML systems.",
+  title: "Somay Kousis | AI Engineer",
+  description:
+    "AI engineering portfolio focused on agentic orchestration, retrieval and persistent memory systems, and product-grade software. AI Systems Engineer at RYSE Technologies and co-founder of Something.",
 };
 
 export default function RootLayout({
@@ -25,10 +24,9 @@ export default function RootLayout({
         <WarningSuppressor />
         <Preloader />
         <Navigation />
-        <AgentField />
+        <div className="page-field" />
         <div className="cinematic-noise" />
         <CustomCursor />
-        <FloatingBot />
         <SmoothScroll>
           <div className="relative z-10">
             {children}
