@@ -121,7 +121,6 @@ export type Project = {
   demoUrl?: string;
   heroImage?: string;
   heroImageAspect?: string;
-  secondaryImages?: string[];
 };
 
 export const projects: Project[] = [
@@ -221,12 +220,8 @@ export const projects: Project[] = [
       "Cost-aware routing across three model providers, chosen per request against latency and price rather than pinned to one vendor.",
     ],
     repoUrl: "https://github.com/Somay-kousis/Something",
-    heroImage: "https://cdn.phototourl.com/free/2026-07-01-13c4bf34-3456-49ce-95fd-f439a1da5f26.png",
-    heroImageAspect: "3372 / 1822",
-    secondaryImages: [
-      "https://cdn.phototourl.com/free/2026-07-01-52fabeab-0128-4a38-96a2-b2e93cb7a631.png",
-      "https://cdn.phototourl.com/free/2026-07-01-82b2825b-c2a7-4dd1-ac08-dbeb4d795ae2.png",
-    ],
+    heroImage: "/images/projects/something-hero.png",
+    heroImageAspect: "1760 / 951",
   },
   {
     slug: "coop-purchase-coordinator",
@@ -273,8 +268,8 @@ export const projects: Project[] = [
       "Nightly dossier loop that searches, reviews, summarizes, and updates memory without prompting.",
     ],
     repoUrl: "https://github.com/Somay-kousis/Co-Founder-Memory",
-    heroImage: "https://www.image2url.com/r2/default/images/1782892828138-eae87302-0978-4734-80b3-5e39d2947178.jpg",
-    heroImageAspect: "2048 / 1078",
+    heroImage: "/images/projects/cofounder-memory-hero.jpg",
+    heroImageAspect: "1760 / 891",
   },
 ];
 

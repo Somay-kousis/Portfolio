@@ -5,14 +5,30 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/portfolio-data";
 
-function ImageSlot({ src, alt, aspectRatio = "2048 / 1078" }: { src?: string; alt: string; aspectRatio?: string }) {
+/**
+ * A screenshot looks soft when it is painted wider than its own pixels. On a 2x
+ * screen an 880px frame demands a 1760px file, so a 1024px capture would be
+ * stretched 1.7x. Rather than blur every image to fill one fixed frame, the
+ * frame is derived from the source's real width (the first number in
+ * heroImageAspect) and clamped to a range that still reads as deliberate.
+ */
+const IMAGE_MIN_W = 520;
+const IMAGE_MAX_W = 880;
+
+function frameWidth(aspectRatio: string) {
+  const intrinsic = Number.parseInt(aspectRatio, 10);
+  if (!Number.isFinite(intrinsic) || intrinsic <= 0) return IMAGE_MAX_W;
+  return Math.round(
+    Math.min(IMAGE_MAX_W, Math.max(IMAGE_MIN_W, intrinsic / 1.5))
+  );
+}
+
+function ImageSlot({ src, alt, aspectRatio = "1760 / 951" }: { src?: string; alt: string; aspectRatio?: string }) {
   if (!src) {
     return (
-      <div className="flex h-[44vh] min-h-80 w-full items-center justify-center border border-[var(--rule)] bg-[var(--surface)]">
+      <div className="mx-auto flex min-h-64 w-full max-w-[880px] items-center justify-center border border-[var(--rule)] bg-[var(--surface)] py-20">
         <div className="max-w-sm px-6 text-center">
-          <span className="mb-4 block text-[0.6rem] font-mono uppercase tracking-[0.2em] text-accent">
-            Screenshot pending
-          </span>
+          <span className="mb-4 block kicker text-accent">Screenshot pending</span>
           <p className="text-sm leading-relaxed text-muted-foreground">
             This project is represented through technical notes and repository evidence rather than invented visuals.
           </p>
@@ -21,20 +37,25 @@ function ImageSlot({ src, alt, aspectRatio = "2048 / 1078" }: { src?: string; al
     );
   }
 
+  const width = frameWidth(aspectRatio);
+
   return (
-    <div
-      className="relative min-h-80 w-full overflow-hidden border border-[var(--rule)] bg-[var(--surface)]"
-      style={{ aspectRatio }}
-    >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(min-width: 1024px) 80vw, 100vw"
-        className="object-contain p-3 md:p-6"
-      />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#8b8b99_1px,transparent_1px),linear-gradient(to_bottom,#8b8b99_1px,transparent_1px)] bg-[size:32px_32px] opacity-10" />
-    </div>
+    <figure className="mx-auto w-full" style={{ maxWidth: `${width}px` }}>
+      <div
+        className="relative w-full overflow-hidden border border-[var(--rule-strong)] bg-[var(--surface)]"
+        style={{ aspectRatio }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          priority
+          quality={90}
+          sizes={`(min-width: ${width + 80}px) ${width}px, 100vw`}
+          className="object-cover"
+        />
+      </div>
+    </figure>
   );
 }
 
@@ -165,18 +186,6 @@ export default function WorkDetailContent({ slug }: { slug: string }) {
             )}
           </div>
         </section>
-
-        {project.secondaryImages && (
-          <section className="mt-20 grid grid-cols-1 gap-4 md:grid-cols-2">
-            {project.secondaryImages.map((image, index) => (
-              <ImageSlot
-                key={image}
-                src={image}
-                alt={`${project.title} detail screenshot ${index + 1}`}
-              />
-            ))}
-          </section>
-        )}
       </div>
     </main>
   );
