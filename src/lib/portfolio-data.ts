@@ -170,6 +170,8 @@ export const projects: Project[] = [
       "ETag-revalidated caching where a 304 consumes no rate-limit quota, and a committed dossier corpus so the agent can be iterated with no token and no API budget.",
     ],
     repoUrl: "https://github.com/Somay-kousis/podman-flake-agent",
+    heroImage: "/images/projects/podman-hero.png",
+    heroImageAspect: "1024 / 585",
   },
   {
     slug: "rabbithole",
