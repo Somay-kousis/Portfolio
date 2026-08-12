@@ -4,7 +4,7 @@ export const profile = {
   github: "https://github.com/Somay-kousis",
   linkedin: "https://www.linkedin.com/in/somay-kousis-630ab1313/",
   leetcode: "https://leetcode.com/u/oeuvre/",
-  resume: "https://drive.google.com/file/d/183FsKDsP6FpObK05LEKeIDbo09mjqk06/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/12tOU2lDhsohhyAulXJyM9EX8_oPnXQyz/view?usp=share_link",
   image: "/profile.jpeg",
 };
 
