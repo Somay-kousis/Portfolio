@@ -27,18 +27,17 @@ export type Experience = {
 
 export const experience: Experience[] = [
   {
-    company: "RYSE Technologies",
+    company: "RYSE Technologies Pvt Ltd",
     role: "AI Systems Engineer Intern",
-    period: "Jul 2026 – Present",
-    location: "Remote / Part-time",
+    period: "Jul 2026 – Sep 2026",
+    location: "Remote",
     summary:
       "Building the orchestration layer that routes work across a large registry of specialized subagents.",
     detail: [
-      "Built the main orchestrator agent, routing tasks across a registry of 3,000+ specialized subagents through a multi-layer pipeline: intent classification, capability scoring, context assembly, then dispatch.",
-      "Cut misrouted tasks by roughly 40% and brought dispatch latency to around 120ms.",
-      "Built production subagents using UV for isolated dependency and environment management, each with a persistent memory layer for long-running task continuity.",
+      "Engineered 5+ production-grade subagents using UV and LangGraph, implementing persistent memory layers for long-running task continuity.",
+      "Architected a central orchestrator agent to route 10,000+ daily tasks across specialized subagents, reducing misrouted tasks by 33% and dispatch latency by 24%.",
     ],
-    stack: ["Python", "LangGraph", "UV", "PostgreSQL", "Vector memory"],
+    stack: ["Python", "UV", "Langchain", "LangGraph", "persistent/vector memory store", "PostgreSQL"],
   },
   {
     company: "Something",
@@ -63,9 +62,9 @@ export const experience: Experience[] = [
     summary:
       "Delivered a multi-role recruitment product end to end for a local client.",
     detail: [
-      "Shipped seeker, provider, and admin roles against one shared data model.",
-      "Built job workflows, approval chains, interview scheduling, authentication, and analytics.",
-      "Took the project from requirements to deployed product as the sole developer.",
+      "Architected a Next.js and Supabase recruitment platform supporting 3 user roles with distinct workflows and role-based access control (RBAC).",
+      "Automated hiring logistics via custom interview scheduling pipelines, reducing administrative overhead by 40% (saving ~15 hours/week).",
+      "Deployed via Vercel with integrated real-time analytics, ensuring 99.9% availability for a seamless onboarding experience.",
     ],
     stack: ["Next.js", "Supabase", "Vercel", "TypeScript"],
   },
@@ -74,7 +73,7 @@ export const experience: Experience[] = [
 export const education = {
   institution: "ABV-IIITM Gwalior",
   degree: "B.Tech, Computer Science and Engineering",
-  period: "Aug 2024 – 2028",
+  period: "Aug 2024 – April 2028",
   location: "Gwalior, IN",
   coursework: [
     "Data Structures & Algorithms",
@@ -82,21 +81,26 @@ export const education = {
     "DBMS",
     "Operating Systems",
     "Computer Networks",
+    "Theory of Computation",
   ],
 };
 
 export const achievements = [
   {
-    title: "Smart India Hackathon 2025",
-    detail: "6th place nationally, leading a team of 6 at a government innovation challenge.",
+    title: "Egoistic Ideathon 2026",
+    detail: "Winner (International). Led a 4-person cross-functional team as technical lead, driving product direction.",
+  },
+  {
+    title: "LeetCode",
+    detail: "Solved 500+ Data Structures and Algorithms (DSA) problems.",
   },
   {
     title: "Hacksagon 2024",
-    detail: "2nd position, Hardware Track, inter-college challenge.",
+    detail: "2nd position (Hardware Track). Co-ordinated with hardware members and owned the computation subsystem.",
   },
   {
-    title: "Published Writer",
-    detail: "CAMA Magazine (Canada). Poetry recitations performed to audiences of 350+.",
+    title: "CockroachDB Hackathon",
+    detail: "3rd place (International). Solo participation engineering a solution on a new database management system.",
   },
 ];
 
