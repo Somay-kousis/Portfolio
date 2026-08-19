@@ -4,7 +4,7 @@ export const profile = {
   github: "https://github.com/Somay-kousis",
   linkedin: "https://www.linkedin.com/in/somay-kousis-630ab1313/",
   leetcode: "https://leetcode.com/u/oeuvre/",
-  resume: "https://drive.google.com/file/d/12tOU2lDhsohhyAulXJyM9EX8_oPnXQyz/view?usp=share_link",
+  resume: "https://drive.google.com/file/d/104kzBNkD2czXlUXf81MuudIelK8Wn3yY/view?usp=sharing",
   image: "/profile.jpeg",
 };
 
@@ -104,9 +104,10 @@ export const achievements = [
   },
 ];
 
-export const certifications = [
-  { title: "MCP: Build Rich-Context AI Apps", issuer: "Anthropic" },
-  { title: "AI Agents for Image and Video Generation", issuer: "Google" },
+export const leadership = [
+  { title: "SGM Social Initiative (Executive)", detail: "Teaching math, English, and life skills to underprivileged children every week." },
+  { title: "Infotsav ’24 (Event Management)", detail: "Ran logistics for ABV-IIITM Gwalior’s 1000+ attendee annual fest." },
+  { title: "Uthaan Journalism Club (Member)", detail: "Editorial writing and storytelling for institute journalism." },
 ];
 
 export type Project = {
@@ -279,20 +280,24 @@ export const projects: Project[] = [
 
 export const technicalCore = [
   {
-    title: "Agentic Orchestration",
-    items: ["LangGraph", "LangChain", "MCP", "State Schema Constraints", "HITL", "Multi-Provider Routing", "Deep Agents"],
+    title: "AI Systems",
+    items: ["LangGraph", "LangChain", "RAG", "hybrid search", "reranking", "CRAG", "Self-RAG", "persistent memory", "LangSmith", "LLM evals"],
   },
   {
-    title: "Retrieval & Memory",
-    items: ["Hybrid Search", "Pinecone + BM25", "Jina Rerank", "CRAG / Self-RAG", "Bi-Temporal Versioning", "pgvector / HNSW", "C-SPANN ANN"],
+    title: "AI Infrastructure",
+    items: ["FastAPI", "PostgreSQL", "CockroachDB", "Redis", "SQLite", "Docker", "Supabase", "AWS (Bedrock, S3, EC2)", "vector databases"],
   },
   {
-    title: "Evaluation & Correctness",
-    items: ["LLM-as-Judge", "Gold Label Sets", "Abstention Metrics", "Live Integration Tests", "SERIALIZABLE Retries", "Pytest"],
+    title: "Machine Learning",
+    items: ["Deep Learning", "PyTorch", "scikit-learn", "XGBoost", "embeddings", "feature engineering"],
   },
   {
-    title: "Systems & Product",
-    items: ["FastAPI", "CockroachDB", "PostgreSQL", "Supabase", "AWS Bedrock", "Docker", "Next.js 15 / React 19"],
+    title: "Software Engineering",
+    items: ["Git", "GitHub", "REST APIs", "OOP", "Data Structures & Algorithms", "Linux", "Unit/Integration Testing", "Agile"],
+  },
+  {
+    title: "Languages & Product",
+    items: ["Python", "C++", "SQL", "TypeScript", "React", "Next.js", "Tailwind CSS", "system design", "product design", "UI/UX"],
   },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { achievements, certifications, education, experience } from "@/lib/portfolio-data";
+import { achievements, leadership, education, experience } from "@/lib/portfolio-data";
 
 export default function MomentExperience() {
   return (
@@ -127,16 +127,16 @@ export default function MomentExperience() {
 
           <article className="border border-[var(--rule)] bg-[var(--surface)] p-6 md:p-8">
             <span className="mb-6 block text-[0.6rem] font-mono uppercase tracking-[0.2em] text-accent">
-              Certifications
+              Leadership & Community
             </span>
             <div className="flex flex-col gap-5">
-              {certifications.map((item) => (
+              {leadership.map((item) => (
                 <div key={item.title} className="border-b border-[var(--rule)] pb-5 last:border-b-0 last:pb-0">
                   <h3 className="mb-2 text-sm font-bold uppercase leading-snug tracking-tight text-foreground">
                     {item.title}
                   </h3>
-                  <p className="text-[0.6rem] font-mono uppercase tracking-[0.18em] text-muted-foreground">
-                    {item.issuer}
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {item.detail}
                   </p>
                 </div>
               ))}
