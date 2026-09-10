@@ -115,6 +115,32 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "pocket-change",
+    title: "Pocket Change",
+    label: "Agentic Commerce / Capability Security",
+    year: "2026",
+    status: "Deployed service",
+    problem:
+      "An AI agent holding a payment credential is one bad prompt away from an unbounded purchase. Access-token schemes can say an agent may spend, but not how much, on what, how many times, or for how long before that permission has to be re-earned.",
+    approach:
+      "Built capability-based authorization for AI agents on Ed25519 Biscuit tokens, where every delegation attenuates monotonically: a sub-agent can only narrow the permissions it was handed, never widen them. Enforced 7 deterministic bounds and proved they hold across 121-node recursive delegation trees, not just single-hop grants.",
+    modelOrSystem:
+      "FastAPI service on Google Cloud Run with Vertex AI and Firestore, using request-derived idempotency keys so a retried or replayed request settles once, sub-200ms, instead of double-charging. A 4-suite adversarial eval harness attacks the system directly rather than grading transcripts.",
+    result:
+      "400 tests, fully offline, zero model calls or API keys required to run the suite. The adversarial harness defends 10 of 12 documented agentic-commerce attack vectors, with the 2 gaps published rather than hidden.",
+    stack: ["Biscuit / Ed25519", "FastAPI", "Google Cloud Run", "Vertex AI", "Firestore", "Python"],
+    technicalHighlights: [
+      "Monotonic attenuation across delegation: a capability token can only shrink in scope as it passes down a chain of sub-agents, enforced structurally rather than by convention.",
+      "7 deterministic bounds (spend cap, rate limit, scope, expiry, and related constraints) checked at every hop of a 121-node recursive delegation tree.",
+      "Request-derived idempotency keys giving sub-200ms replay-safe settlement, so a network retry can never become a duplicate charge.",
+      "4-suite adversarial eval harness scored against 12 documented agentic-commerce attack vectors, publishing the 2 it does not yet stop.",
+    ],
+    repoUrl: "https://github.com/Somay-kousis/Pocket-Change",
+    demoUrl: "https://pocket-change-klwjhco2ta-el.a.run.app",
+    heroImage: "/images/projects/pocket-change-hero.png",
+    heroImageAspect: "3412 / 1584",
+  },
+  {
     slug: "paperplanes",
     title: "PaperPlanes",
     label: "Agentic Memory / Distributed Systems",
@@ -260,30 +286,6 @@ export const projects: Project[] = [
     repoUrl: "https://github.com/Somay-kousis/Co-Founder-Memory",
     heroImage: "/images/projects/cofounder-memory-hero.jpg",
     heroImageAspect: "1760 / 891",
-  },
-  {
-    slug: "pocket-change",
-    title: "Pocket Change",
-    label: "Agentic Commerce / Capability Security",
-    year: "2026",
-    status: "Deployed service",
-    problem:
-      "An AI agent holding a payment credential is one bad prompt away from an unbounded purchase. Access-token schemes can say an agent may spend, but not how much, on what, how many times, or for how long before that permission has to be re-earned.",
-    approach:
-      "Built capability-based authorization for AI agents on Ed25519 Biscuit tokens, where every delegation attenuates monotonically: a sub-agent can only narrow the permissions it was handed, never widen them. Enforced 7 deterministic bounds and proved they hold across 121-node recursive delegation trees, not just single-hop grants.",
-    modelOrSystem:
-      "FastAPI service on Google Cloud Run with Vertex AI and Firestore, using request-derived idempotency keys so a retried or replayed request settles once, sub-200ms, instead of double-charging. A 4-suite adversarial eval harness attacks the system directly rather than grading transcripts.",
-    result:
-      "400 tests, fully offline, zero model calls or API keys required to run the suite. The adversarial harness defends 10 of 12 documented agentic-commerce attack vectors, with the 2 gaps published rather than hidden.",
-    stack: ["Biscuit / Ed25519", "FastAPI", "Google Cloud Run", "Vertex AI", "Firestore", "Python"],
-    technicalHighlights: [
-      "Monotonic attenuation across delegation: a capability token can only shrink in scope as it passes down a chain of sub-agents, enforced structurally rather than by convention.",
-      "7 deterministic bounds (spend cap, rate limit, scope, expiry, and related constraints) checked at every hop of a 121-node recursive delegation tree.",
-      "Request-derived idempotency keys giving sub-200ms replay-safe settlement, so a network retry can never become a duplicate charge.",
-      "4-suite adversarial eval harness scored against 12 documented agentic-commerce attack vectors, publishing the 2 it does not yet stop.",
-    ],
-    repoUrl: "https://github.com/Somay-kousis/Pocket-Change",
-    demoUrl: "https://pocket-change-klwjhco2ta-el.a.run.app",
   },
 ];
 
