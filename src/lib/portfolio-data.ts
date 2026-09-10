@@ -40,21 +40,6 @@ export const experience: Experience[] = [
     stack: ["Python", "UV", "Langchain", "LangGraph", "persistent/vector memory store", "PostgreSQL"],
   },
   {
-    company: "Something",
-    role: "Co-Founder & CEO",
-    period: "Oct 2025 – Present",
-    location: "Delhi, IN",
-    summary:
-      "Co-founded a founder and investor matching platform built on a verified network rather than pitch polish.",
-    detail: [
-      "Own frontend, AI architecture, and go-to-market across a two-sided product serving founders and investors.",
-      "Grew a 573-person waitlist inside the first month with zero paid distribution.",
-      "Designed cost-aware multi-provider AI routing across Groq, Gemini, and Claude to keep inference economics viable pre-revenue.",
-    ],
-    stack: ["Next.js 15", "React 19", "Node / Express", "MongoDB", "LangGraph"],
-    href: "https://github.com/Somay-kousis/Something",
-  },
-  {
     company: "SteelCareer",
     role: "Software Developer, Client Project",
     period: "Jan 2026 – Mar 2026",

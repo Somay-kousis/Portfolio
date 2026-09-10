@@ -47,12 +47,12 @@ export default function MomentArrival() {
                   AI Systems Engineer @ RYSE
                 </span>
                 <p className="text-[0.65rem] font-mono uppercase tracking-[0.18em] text-foreground">
-                  Somay Kousis / Co-Founder, Something
+                  Somay Kousis / Agentic Systems
                 </p>
               </div>
             </div>
             <p className="text-base md:text-lg leading-relaxed tracking-tight text-foreground/90">
-              I build stateful multi-agent systems, retrieval and memory pipelines, and product-grade software. The work I care about is the part that holds up under contention, cost limits, and being wrong, not the demo that runs once.
+              I build stateful multi-agent systems, retrieval and memory pipelines, and bounded authority for AI agents. The work I care about is the part that holds up under contention, cost limits, and being wrong, not the demo that runs once.
             </p>
             <div className="grid grid-cols-2 gap-3">
               {ctas.map((cta) => (

@@ -10,7 +10,7 @@ import WarningSuppressor from "@/components/layout/WarningSuppressor";
 export const metadata: Metadata = {
   title: "Somay Kousis | AI Engineer",
   description:
-    "AI engineering portfolio focused on agentic orchestration, retrieval and persistent memory systems, and product-grade software. AI Systems Engineer at RYSE Technologies and co-founder of Something.",
+    "AI engineering portfolio focused on agentic orchestration, retrieval and memory systems, and bounded authority for AI agents. AI Systems Engineer at RYSE Technologies.",
 };
 
 export default function RootLayout({

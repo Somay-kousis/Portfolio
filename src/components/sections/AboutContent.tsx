@@ -29,15 +29,15 @@ export default function AboutContent() {
             </h1>
           </div>
           <p className="self-end text-lg leading-relaxed tracking-tight text-foreground/85">
-            I am Somay Kousis, an AI engineer focused on agentic systems, retrieval workflows, and product-grade implementation. I work on orchestration at RYSE Technologies and co-founded Something, where I own frontend, AI architecture, and go-to-market. My strongest work sits where model behavior, state design, and user experience have to agree.
+            I am Somay Kousis, an AI engineer focused on agentic systems, retrieval workflows, and bounded authority for AI agents. I work on orchestration at RYSE Technologies, and my own work lately is about how much you can let an agent do before you have quietly lost control of it. My strongest work sits where model behavior, state design, and user experience have to agree.
           </p>
         </motion.header>
 
         <section className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[
             ["How I work", "I start from the user problem, make the system inspectable, and avoid hiding weak evidence behind big language."],
-            ["What I build", "Agentic orchestration, retrieval and memory systems, evaluation harnesses, and deployment-ready product software."],
-            ["Current state", "AI Systems Engineer at RYSE Technologies, co-founder of Something, and open to AI engineering work. Building in public throughout."],
+            ["What I build", "Agentic orchestration, retrieval and memory systems, capability-bounded authorization for AI agents, and evaluation harnesses that report false-refusal rate alongside catch rate, not catch rate alone."],
+            ["Current state", "AI Systems Engineer at RYSE Technologies, building agent authority and control systems on the side, and open to AI engineering work. Building in public throughout."],
           ].map(([title, copy]) => (
             <article key={title} className="border border-[var(--rule)] bg-[var(--surface)] p-6 md:p-8">
               <span className="mb-5 block text-[0.6rem] font-mono uppercase tracking-[0.2em] text-accent">

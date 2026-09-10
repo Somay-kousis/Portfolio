@@ -12,7 +12,7 @@ export default function About() {
     offset: ["start 80%", "end 20%"]
   });
 
-  const text = "I am a product-focused builder and machine learning engineer. I design systems that abstract complexity and create digital experiences that feel quietly unforgettable. Bridging the gap between intelligent architecture and premium aesthetics.";
+  const text = "I build systems meant to hold up after the demo ends, under contention, under a rate limit, after the fact they recorded last month turns out to be wrong. Lately that means bounded authority for AI agents: how much you can hand something before you have quietly lost control of it.";
   const words = text.split(" ");
 
   return (
