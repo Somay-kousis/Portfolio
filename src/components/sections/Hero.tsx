@@ -26,7 +26,7 @@ export default function Hero() {
           
           <div className="mt-12 md:mt-24 flex flex-col md:flex-row justify-between items-end w-full gap-8">
             <p className="text-muted-foreground max-w-sm text-sm uppercase tracking-widest leading-relaxed">
-              Product-focused builder. Designing systems and digital experiences that feel quietly unforgettable.
+              Bounded authority for AI agents. Systems built to hold up after the demo ends, not just during it.
             </p>
             <p className="text-foreground text-xs font-mono uppercase tracking-widest opacity-50">
               Scroll to explore ↓
