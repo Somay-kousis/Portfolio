@@ -137,6 +137,8 @@ export const projects: Project[] = [
     ],
     repoUrl: "https://github.com/Somay-kousis/Pocket-Change",
     demoUrl: "https://pocket-change-klwjhco2ta-el.a.run.app",
+    heroImage: "/images/projects/pocket-change-hero.png",
+    heroImageAspect: "3412 / 1584",
   },
   {
     slug: "paperplanes",
